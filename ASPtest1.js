@@ -29,6 +29,7 @@ casper.test.begin('Comprobar pagina ASPgems', 11, function suite(test) {
     });
    
     casper.run(function() {
+       	casper.echo("Test finalizado");
        	test.done();
     });
 
