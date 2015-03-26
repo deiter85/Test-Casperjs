@@ -1,4 +1,4 @@
-casper.test.begin('Comprobar pagina ASPgems', 11, function suite(test) {
+casper.test.begin('Comprobar pagina ASPgems - Test1', 11, function suite(test) {
     
     casper.start('http://aspgems.com/', function() {
        	casper.viewport(1200,720); //modificar las dimensiones del navegador
