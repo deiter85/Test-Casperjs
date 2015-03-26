@@ -30,7 +30,6 @@ casper.test.begin('Comprobar pagina ASPgems - Test1', 11, function suite(test) {
    
     casper.run(function() {
     	casper.echo("Test finalizado"); //mensaje
-     	casper.echo("Test finalizado");
      	test.done();
     });
 
