@@ -1,4 +1,4 @@
-casper.test.begin('Comprobar pagina ASPgems - Test5 - Contacto', 5, function suite(test) {
+casper.test.begin('Comprobar pagina ASPgems - Test5 - Contacto', 9, function suite(test) {
     
   	casper.start('http://aspgems.com/', function() {
 
