@@ -14,7 +14,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test5 - Contacto', 5, function sui
 
   	casper.run(function() {
     		casper.echo("Test finalizado"); //mensaje
-    		test.done();
+    		test.done(); 
   	});
 
 });
