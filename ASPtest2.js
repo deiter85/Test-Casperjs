@@ -12,7 +12,7 @@ casper.on('page.error', function(msg, trace) {
    }
 });
 casper.test.begin('Resurrectio test', function(test) {
-   casper.start('http://aspgems.com/');
+   casper.start('https://aspgems.com/');
    casper.waitForSelector(x("//a[normalize-space(text())='presupuesto']"),
        function success() {
            test.assertExists(x("//a[normalize-space(text())='presupuesto']"));
