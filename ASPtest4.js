@@ -27,4 +27,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 16, fun
     });
 
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> a5da40665ce586e964d7468ed77f1840e103462f
