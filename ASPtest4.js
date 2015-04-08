@@ -4,7 +4,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 16, fun
     
     casper.start('https://aspgems.com/', function() {
         test.assertResourceExists('logo.png', 'Se encuentra el Logo'); //comprueba si esta el logo
-        test.assertResourceExists('bannersintexto.jpg?itok=b6rNsEI2', 'Se encuentra la imagen'); //comprueba si esta la imagen de la pagina principal
+        test.assertResourceExists('bannersintexto.jpg', 'Se encuentra la imagen'); //comprueba si esta la imagen de la pagina principal
         test.assertExists('.twitter-icon', 'Se encuentra el icono de twitter'); //comprueba si esta el icono de twitter
         test.assertExists('.rss-icon', 'Se encuentra el icono de rss'); //comprueba si esta el icono de rss
         test.assertExists('header.clearfix', 'Se encuentra el header'); // comprueba el header
