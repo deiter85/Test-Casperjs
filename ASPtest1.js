@@ -1,6 +1,6 @@
 casper.test.begin('Comprobar pagina ASPgems - Test1', 11, function suite(test) {
     
-  casper.start('http://aspgems.com/', function() {
+  casper.start('https://aspgems.com/', function() {
     casper.viewport(1200,720); //modificar las dimensiones del navegador
     test.assertHttpStatus(200); //comprobar el codigo de estatus Http
     test.assertTitle('ASPgems Soluciones Ágiles | Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina
@@ -11,7 +11,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test1', 11, function suite(test) {
   });
 
   casper.then(function(){		
- 	 	test.assertUrlMatch('http://aspgems.com/trabajos', 'Direccion URL correcta'); //comprobar la direccion URL
+ 	 	test.assertUrlMatch('https://aspgems.com/trabajos', 'Direccion URL correcta'); //comprobar la direccion URL
  	 	test.assertSelectorHasText('h1', 'trabajos'); //comprobar si el selector contiene un texto
   	test.assertTextExists('trabajos', 'La pagina contiene la palabra "trabajos"'); //comprobar que existe un texto
   });
