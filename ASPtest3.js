@@ -12,7 +12,7 @@ casper.on('page.error', function(msg, trace) {
    }
 });
 casper.test.begin('Resurrectio test ASPgems', 7, function(test) {
-   casper.start('http://aspgems.com/');
+   casper.start('https://aspgems.com/');
    casper.waitForSelector(x("//*[contains(text(), \'qué hacemos...\')]"),
        function success() {
            test.assertExists(x("//*[contains(text(), \'qué hacemos...\')]"));

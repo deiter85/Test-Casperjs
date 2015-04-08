@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 
 casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 16, function suite(test) {
     
-    casper.start('http://aspgems.com/', function() {
+    casper.start('https://aspgems.com/', function() {
         test.assertResourceExists('logo.png', 'Se encuentra el Logo'); //comprueba si esta el logo
         test.assertResourceExists('bannersintexto.jpg?itok=b6rNsEI2', 'Se encuentra la imagen'); //comprueba si esta la imagen de la pagina principal
         test.assertExists('.twitter-icon', 'Se encuentra el icono de twitter'); //comprueba si esta el icono de twitter
