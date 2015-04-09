@@ -3,8 +3,6 @@ var x = require('casper').selectXPath;
 casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 20, function suite(test) {
     
     casper.start('https://aspgems.com/', function() {
-        test.assertResourceExists('logo.png', 'Se encuentra el Logo'); //comprueba si esta el logo
-        test.assertResourceExists('bannersintexto.jpg', 'Se encuentra la imagen'); //comprueba si esta la imagen de la pagina principal
         test.assertExists('.twitter-icon', 'Se encuentra el icono de twitter'); //comprueba si esta el icono de twitter
         test.assertExists('.rss-icon', 'Se encuentra el icono de rss'); //comprueba si esta el icono de rss
         test.assertExists('header.clearfix', 'Se encuentra el header'); // comprueba el header
@@ -23,6 +21,8 @@ casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 20, fun
         test.assertExists(x('//a[@class="language-link"]'), 'Se encuentra language-link'); //comprobar link a ingles
         test.assertExists(x('//*[@class="form-item form-type-textfield form-item-custom-search-blocks-form-1"]'), 'Se encuentra form-item form-type-textfield form-item-custom-search-blocks-form-1'); //comprobar buscar
         test.assertExists(x('//*[@class="menu-footer"]'), 'Se encuentra menu-footer'); //comprobar menu-footer
+        test.assertExists(x('//*[@class="site-logo image-style-none"]'), 'Se encuentra el Logo'); //comprueba si esta el logo
+        test.assertExists(x('//*[@class="image-style-banner-home"]'), 'Se encuentra la imagen'); //comprueba si esta la imagen de la pagina principal
     });
    
     casper.run(function() {
