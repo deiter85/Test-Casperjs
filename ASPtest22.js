@@ -23,36 +23,29 @@ var editor_allow = ["/node/add/culture",
 					"/node/add/banner-second-clone",
 					"/node/add/banner-third-clone",
 					"/node/add/asplab-project",];
-
 var nomUser = ****;
-
 var password = ****;
-
 var indice = 0;
 
-casper.test.begin('Comprobar pagina ASPgems - Test22 - Http Status', 0, function suite(test) {
-    
-  casper.start('https://aspgems.com/');
-  	
+casper.test.begin('Comprobar pagina ASPgems - Test22 - Http Status', 0, function suite(test) {   
+  casper.start('https://aspgems.com/'); 	
   casper.thenOpen('https://aspgems.com/user', function() {
     this.echo('⌚ Logging in '+nomUser+'....');
     this.fill('form#user-login', {
-      "name": nomUser,
-      "pass": password
+      	"name": nomUser,
+      	"pass": password
     }, true);
     this.echo('Authentication successful');
-  });
- 	
+  });	
   for (i=0;i<editor_allow.length;i++) {     
     casper.thenOpen('https://aspgems.com'+editor_allow[i], function() {
-      this.echo('⌚ Opened the '+editor_allow[indice++]);
-      test.assertHttpStatus(200);	    
+      	this.echo('⌚ Opened the '+editor_allow[indice++]);
+      	this.echo(this.getTitle());
+      	test.assertHttpStatus(200);	    
     });
   }
-
   casper.run(function() {
-  	casper.echo('Test finalizado');
-  	test.done();
+  		casper.echo('Test finalizado');
+  		test.done();
   });
-
 });

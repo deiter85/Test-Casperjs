@@ -1,29 +1,38 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test12 - Blog-Etiquetas', 8, function suite(test) {
-    
+casper.test.begin('Comprobar pagina ASPgems - Test12 - Blog-Etiquetas', 8, function suite(test) {    
   	casper.start('https://aspgems.com/', function() {
-   		casper.click("a[href='/blog']"); //hacer click en presupuesto
+   	  	casper.click("a[href='/blog']"); //hacer click en presupuesto
   	});
-
     casper.then(function() {
       	casper.click("a[href='/blog/tags']"); //hacer click en etiquetas ver todas
     });
-
   	casper.then(function() {		
-  		test.assertUrlMatch('https://aspgems.com/blog/tags', 'Direccion URL correcta'); //comprobar la direccion URL
-  		test.assertExists(x('//*[@id="page-title"]'), 'the element exists page-title'); //comprobar el titulo
-  		test.assertExists(x('//*[@class="subtitle"]'), 'the element exists subtitle'); //comprobar el subtitulo
-  		test.assertExists(x('//*[@id="block-system-main"]'), 'the element exists block-system-main'); //comprobar lista de etiquetas
-    	test.assertExists(x('//*[@id="block-views-tags-block"]'), 'the element exists block-views-tags-block'); //comprobar lista de etiquetas
-      	test.assertExists(x('//*[@id="block-mailchimp-signup-sign-up"]'), 'the element exists block-mailchimp-signup-sign-up'); //comprobar cuadro recibir novedades
-      	test.assertExists(x('//*[@id="block-views-posts-block-4"]'), 'the element exists block-views-posts-block-4'); //comprobar lista ultimos post            
-      	test.assertExists(x('//*[@id="block-customblocks-block-flipboard"]'), 'the element exists block-customblocks-block-flipboard'); //comprobar cuadro nuestra revista
+  		  test.assertUrlMatch('https://aspgems.com/blog/tags', 'Direccion URL correcta'); //comprobar la direccion URL
+    });
+    casper.then(function() {
+  		  test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
+    });
+    casper.then(function() {
+  		  test.assertExists(x('//*[@class="subtitle"]'), 'Se encuentra el subtitulo'); //comprobar el subtitulo
+    });
+    casper.then(function() {
+  		  test.assertExists(x('//*[@id="block-system-main"]'), 'Se encuentra la lista de etiquetas'); //comprobar lista de etiquetas
+    });
+    casper.then(function() {
+    	  test.assertExists(x('//*[@id="block-views-tags-block"]'), 'Se encuentra la lista de etiquetas mas usadas'); //comprobar lista de etiquetas mas usadas
+    });
+    casper.then(function() {
+      	test.assertExists(x('//*[@id="block-mailchimp-signup-sign-up"]'), 'Se encuentra el cuadro recibir novedades'); //comprobar cuadro recibir novedades
+    });
+    casper.then(function() {
+      	test.assertExists(x('//*[@id="block-views-posts-block-4"]'), 'Se encuentra la lista de ultimos post'); //comprobar lista ultimos post
+    });
+    casper.then(function() {            
+      	test.assertExists(x('//*[@id="block-customblocks-block-flipboard"]'), 'Se encuentra el cuadro nuestra revista'); //comprobar cuadro nuestra revista
    	});
-
    	casper.run(function() {
-   		casper.echo("Test finalizado"); //mensaje
-   		test.done();
+   	  	casper.echo("Test finalizado"); //mensaje
+   		  test.done();
    	});
-
 });

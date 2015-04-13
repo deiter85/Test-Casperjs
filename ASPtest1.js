@@ -17,7 +17,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test1', 11, function suite(test) {
     });
 
     casper.then(function(){	
-  		casper.fill('form[action="/search/node"]', { custom_search_blocks_form_1: 'presupuesto' }, true); //rellena un formulario
+  		casper.fill('form[action="/search/node"]', { 'custom_search_blocks_form_1': 'presupuesto' }, true); //rellena un formulario
   		test.assertField('custom_search_blocks_form_1', 'presupuesto'); //comprobar que el recurso contiene una palabra
     }); 
 
