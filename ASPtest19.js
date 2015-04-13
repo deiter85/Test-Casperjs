@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test19 - Presupuesto-Red Social', 
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/red-social']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/presupuesto/red-social']"); //hacer click en red social
     });
   	casper.then(function() {		
   	   	test.assertUrlMatch('https://aspgems.com/presupuesto/red-social', 'Direccion URL correcta'); //comprobar la direccion URL

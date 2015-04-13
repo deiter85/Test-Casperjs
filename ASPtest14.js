@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test14 - Presupuesto-Aplicacion Ge
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/aplicacion-de-gestion']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/presupuesto/aplicacion-de-gestion']"); //hacer click en aplicacion de gestion
     });
   	casper.then(function() {		
   	   	test.assertUrlMatch('https://aspgems.com/presupuesto/aplicacion-de-gestion', 'Direccion URL correcta'); //comprobar la direccion URL

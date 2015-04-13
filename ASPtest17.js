@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test17 - Presupuesto-Un Blog', 8, 
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/un-blog']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/presupuesto/un-blog']"); //hacer click en un blog
     });
   	casper.then(function() {		
   	   	test.assertUrlMatch('https://aspgems.com/presupuesto/un-blog', 'Direccion URL correcta'); //comprobar la direccion URL

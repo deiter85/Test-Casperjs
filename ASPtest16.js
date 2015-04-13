@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test16 - Presupuesto-Web Corporati
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/web-corporativa']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/presupuesto/web-corporativa']"); //hacer click en web corporativa
     });
   	casper.then(function() {		
   	   	test.assertUrlMatch('https://aspgems.com/presupuesto/web-corporativa', 'Direccion URL correcta'); //comprobar la direccion URL

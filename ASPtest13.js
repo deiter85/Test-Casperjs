@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test13 - Presupuesto-Aplicacion We
   	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   });
   casper.then(function() {
-    casper.click("a[href='/presupuesto/aplicacion-web-completa']"); //hacer click en etiquetas ver todas
+    casper.click("a[href='/presupuesto/aplicacion-web-completa']"); //hacer click en aplicacion web completa
   });
   casper.then(function() {		
     test.assertUrlMatch('https://aspgems.com/presupuesto/aplicacion-web-completa', 'Direccion URL correcta'); //comprobar la direccion URL

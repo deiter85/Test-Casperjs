@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test20 - Presupuesto-Web Contenido
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/web-de-contenidos-tipo-revista']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/presupuesto/web-de-contenidos-tipo-revista']"); //hacer click en web de contenidos tipo revista
     });
   	casper.then(function() {		
   	   	test.assertUrlMatch('https://aspgems.com/presupuesto/web-de-contenidos-tipo-revista', 'Direccion URL correcta'); //comprobar la direccion URL

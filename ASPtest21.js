@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test21 - Presupuesto-Tienda Online
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/tienda-online-basica']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/presupuesto/tienda-online-basica']"); //hacer click en tienda online basica
     });
   	casper.then(function() {		
   	   	test.assertUrlMatch('https://aspgems.com/presupuesto/tienda-online-basica', 'Direccion URL correcta'); //comprobar la direccion URL

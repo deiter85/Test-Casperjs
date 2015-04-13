@@ -5,7 +5,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test12 - Blog-Etiquetas', 8, funct
    	  	casper.click("a[href='/blog']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/blog/tags']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/blog/tags']"); //hacer click en etiquetas, ver todas
     });
   	casper.then(function() {		
   		  test.assertUrlMatch('https://aspgems.com/blog/tags', 'Direccion URL correcta'); //comprobar la direccion URL
