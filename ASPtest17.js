@@ -17,7 +17,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test17 - Presupuesto-Un Blog', 8, 
         test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
     });
     casper.then(function() {
-        test.assertExists(x('//a[@title="Volver a presupuestos" and @href="/presupuesto"]'), 'tSe encuentra el link volver a presupuesto'); //comprobar link volver a presupuesto
+        test.assertExists(x('//a[@title="Volver a presupuestos" and @href="/presupuesto"]'), 'Se encuentra el link volver a presupuesto'); //comprobar link volver a presupuesto
     });
     casper.then(function() {
         test.assertExists(x('//*[@class="field field-name-field-project-type-description field-type-text-with-summary field-label-hidden view-mode-full"]'), 'Se encuentra el texto de la pagina'); //comprobar texto de la pagina
