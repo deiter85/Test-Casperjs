@@ -2,34 +2,34 @@ var x = require('casper').selectXPath;
 
 casper.test.begin('Comprobar pagina ASPgems - Test6 - Blog', 8, function suite(test) {    
   	casper.start('https://aspgems.com/', function() {
-    	casper.click("a[href='/blog']"); //hacer click en blog
+    	  casper.click("a[href='/blog']"); //hacer click en blog
   	});
   	casper.then(function(){		
- 	  	test.assertUrlMatch('https://aspgems.com/blog', 'Direccion URL correcta'); //comprobar la direccion URL
- 	});
+ 	  	  test.assertUrlMatch('https://aspgems.com/blog', 'Direccion URL correcta'); //comprobar la direccion URL
+ 	  });
   	casper.then(function(){
- 	  	test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
- 	});
+ 	  	  test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
+  	});
   	casper.then(function(){
- 	  	test.assertExists(x('//*[@id="block-customblocks-block-subtitle-blog"]'), 'Se encuentra el subtitulo'); //comprobar el subtitulo
- 	});
+ 	  	  test.assertExists(x('//*[@id="block-customblocks-block-subtitle-blog"]'), 'Se encuentra el subtitulo'); //comprobar el subtitulo
+ 	  });
   	casper.then(function(){
- 	  	test.assertExists(x('//*[@id="block-system-main"]'), 'Se encuentra la lista de post'); //comprobar lista de post
- 	});
+ 	  	  test.assertExists(x('//*[@id="block-system-main"]'), 'Se encuentra la lista de post'); //comprobar lista de post
+ 	  });
   	casper.then(function(){
- 	  	test.assertExists(x('//*[@id="block-views-tags-block"]'), 'Se encuentra la lista de etiquetas'); //comprobar lista de etiquetas
- 	});
+ 	  	  test.assertExists(x('//*[@id="block-views-tags-block"]'), 'Se encuentra la lista de etiquetas'); //comprobar lista de etiquetas
+ 	  });
   	casper.then(function(){
- 	  	test.assertExists(x('//*[@id="block-mailchimp-signup-sign-up"]'), 'Se encuentra el cuadro recibit novedades'); //comprobar cuadro recibir novedades
- 	});
+ 	  	  test.assertExists(x('//*[@id="block-mailchimp-signup-sign-up"]'), 'Se encuentra el cuadro recibit novedades'); //comprobar cuadro recibir novedades
+ 	  });
   	casper.then(function(){
- 	  	test.assertExists(x('//*[@id="block-views-posts-block-4"]'), 'Se encuentra la lista de ultimos post'); //comprobar lista ultimos post
- 	});
+ 	  	  test.assertExists(x('//*[@id="block-views-posts-block-4"]'), 'Se encuentra la lista de ultimos post'); //comprobar lista ultimos post
+ 	  });
   	casper.then(function(){	  	 	  	
- 	  	test.assertExists(x('//*[@id="block-customblocks-block-flipboard"]'), 'Se encuentra el cuadro nuestra revista'); //comprobar cuadro nuestra revista
-	});
+ 	  	  test.assertExists(x('//*[@id="block-customblocks-block-flipboard"]'), 'Se encuentra el cuadro nuestra revista'); //comprobar cuadro nuestra revista
+	  });
   	casper.run(function() {
-    	casper.echo("Test finalizado"); //mensaje
-    	test.done();
+    	  casper.echo("Test finalizado"); //mensaje
+    	  test.done();
   	});
 });
