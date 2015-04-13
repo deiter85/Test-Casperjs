@@ -45,7 +45,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test22 - Http Status', 0, function
   }
   casper.then(function(){
 		casper.click("a[href='/user/logout']"); //cerrar sesion
-		this.echo('⌚ Logging out');
+		this.echo('⌚ Log out');
   });
   casper.run(function() {
   		casper.echo('Test finalizado');
