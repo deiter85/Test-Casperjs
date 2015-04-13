@@ -34,8 +34,10 @@ casper.test.begin('Comprobar pagina ASPgems - Test22 - Http Status', 0, function
       	'name': userName,
       	'pass': password
     }, true);
-    this.echo('Authentication successful');
-  });	
+  });
+  casper.then(function(){
+		test.assertTitle('editor | ASPgems Soluciones Ágiles', 'Authentication successful');
+  });
   for (i=0;i<editor_allow.length;i++) {     
     casper.thenOpen('https://aspgems.com'+editor_allow[i], function() {
       	this.echo('⌚ Opened the '+editor_allow[indice++]);
