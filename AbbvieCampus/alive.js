@@ -11,20 +11,20 @@ casper.test.begin('Tests homepage and request new password page structure', 8, f
     test.assertExists('form#user-login', 'Login form is present.');
   });
   casper.then(function(){
-    test.assertExists(x('//*[@class="site-logo image-style-none"]'), 'Se encuentra el Logo'); //comprueba si esta el logo
+    test.assertExists(x('//*[@class="site-logo image-style-none"]'), 'Se encuentra el Logo');
   });
   casper.then(function(){
-    test.assertExists('header.clearfix'); // comprueba el header
+    test.assertExists('header.clearfix');
   });
   casper.then(function(){
     this.echo('Clicked in SOLICITAR UNA CONTRASEÑA')
-    casper.click("a[href='/user/password']"); //hacer click en un hipervinculo
+    casper.click("a[href='/user/password']");
   });
   casper.wait(1000, function() {});
   casper.then(function(){
     test.assertTitle('Solicitar una contraseña | AbbVie');
   });
-  casper.then(function(){ 
+  casper.then(function(){
     test.assertHttpStatus(200, 'Request new password page was loaded successfully.');
   });
   casper.then(function(){
