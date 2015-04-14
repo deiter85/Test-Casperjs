@@ -49,7 +49,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test22 - Http Status', 0, function
   });
   
   for (i = 0; i < editor_allow.length; i++) {     
-    casper.thenOpen('https://aspgems.com' + editor_allow[i], function() {
+    casper.thenOpen(editor_allow[i], function() {
       	this.echo('⌚ Opened the ' + editor_allow[indice++]);
       	test.assertHttpStatus(200);	// Comprobar estatus del http de los distintos nodos  
     });
@@ -58,7 +58,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test22 - Http Status', 0, function
   var indice2 = 0; //Contador
   
   for (i = 0; i < editor_disallow.length; i++) {     
-    casper.thenOpen('https://aspgems.com' + editor_disallow[i], function() {
+    casper.thenOpen(editor_disallow[i], function() {
       	this.echo('⌚ Opened the ' + editor_disallow[indice2++]);
       	test.assertHttpStatus(403);	// Comprobar estatus del http de los distintos nodos 
     });
