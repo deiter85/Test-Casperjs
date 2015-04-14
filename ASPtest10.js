@@ -19,9 +19,10 @@ casper.test.begin('Comprobar pagina ASPgems - Test10 - Trabajos', 6, function su
     casper.then(function(){
 		  test.assertExists(x('//div[@id="content"]/div/div/div[@class="view-content"]'), 'Se encuentra la lista de casos de exito'); //comprobar lista de casos de exito
     });
-    casper.then(function(){
- 		  casper.click("label[class='option activo']"); //hacer click en formacion
-  	});
+    casper.then(function(){ 
+      casper.click('input[name="field_project_type_value_i18n"][value="2"]'); //hacer click en formacion
+    });
+    casper.wait(1000, function() {});
   	casper.then(function(){		
 		  test.assertExists(x('//div[@id="content"]/div/div/div[@class="view-content"]'), 'Se encuentra la lista de proyectos propios'); //comprobar lista de proyectos propios
   	});
