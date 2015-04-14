@@ -20,11 +20,12 @@ casper.test.begin('Comprobar pagina ASPgems - Test9 - Servicios', 6, function su
 		test.assertExists(x('//div[@id="content"]/div/div/div[@class="view-content"]'), 'Se encuentra la lista de servicios profesionales'); //comprobar lista de servicios profesionales
   });
   casper.then(function(){ 
- 	 	casper.click("label[class='option activo']"); //hacer click en formacion
+ 	 	casper.click('input[name="field_service_type_value"][value="2"]'); //hacer click en formacion
 	});
-	casper.then(function(){		
+  casper.wait(1000, function() {});
+  casper.then(function(){		
 		test.assertExists(x('//div[@id="content"]/div/div/div[@class="view-content"]'), 'Se encuentra la lista de formacion'); //comprobar lista de formacion
-	});
+  });
   casper.run(function() {
   	casper.echo("Test finalizado"); //mensaje
   	test.done();
