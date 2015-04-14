@@ -33,9 +33,7 @@ var indice = 0; //Contador
 
 casper.test.begin('Comprobar pagina ASPgems - Test22 - Http Status', 0, function suite(test) {   
   
-  casper.start();
-  
-  casper.thenOpen('/user', function() {
+  casper.start('https://aspgems.com/user', function() {
   	test.assertTitle('Cuenta de usuario | ASPgems Soluciones Ágiles'); 
     this.echo('⌚ Logging in....');
     this.fill('form[action="/user"]', { //Iniciar sesion
