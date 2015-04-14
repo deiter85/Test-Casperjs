@@ -1,10 +1,3 @@
-/**
- * Homepage tests.
- *
- * These tests make some assertions on a Drupal vanilla installation.
- * Feel free to change them to suit your needs.
- */
-
 casper.test.begin('Tests homepage and request new password page structure', 4, function suite(test) {
   casper.start();
   casper.thenOpen('/user', function() {
