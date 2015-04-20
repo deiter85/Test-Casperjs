@@ -1,86 +1,72 @@
-casper.test.begin('Campus Abbvie - Test2', 12, function suite(test) {
+var x = require('casper').selectXPath;
+var userName = ****;
+var password = ****;
 
-  casper.start();
-  
-  casper.thenOpen('/es', function() {});
+casper.test.begin('Campus Abbvie - Test2', 9, function suite(test) {
 
-  casper.then(function() {
-    casper.click("a[href='/es/list-of-classrooms']");
-    this.echo('Clicked in Aula');
-  });
+    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+        this.echo('⌚ Logging in....');
+        this.fill('form#user-login', {
+            'name': userName,
+            'pass': password
+        }, true);
+        this.echo('Homepage was loaded successfully.');
+    });
 
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/adherencia']");
-    this.echo('Clicked in Adherencia');
-  });
+    casper.wait(500, function() {});
 
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/studyrooms/adherencia/courses');
-  });
+    casper.then(function(){
+        casper.click("a[href='/es/catalogue']");
+        this.echo('Clicked in Catalogo');
+    });
 
-  casper.back();
+    casper.wait(500, function() {});
 
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/an%C3%A1lisis-de-negocio']");
-    this.echo('Clicked in Análisis de negocio');
-  });
+    casper.then(function(){
+        test.assertHttpStatus(200, 'Request new password page was loaded successfully.');
+        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/catalogue');
+    });
 
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/studyrooms/análisis-de-negocio/courses');
-  });
+    casper.then(function() {
+        test.assertExists(x('//*[@id="page-title"]'));
+    });
 
-  casper.back();
+    casper.then(function() {
+        test.assertExists(x('//*[@class="view-filters"]'));
+    });
 
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/competencias']");
-    this.echo('Clicked in Competencias');
-  });
+    casper.then(function() {
+        test.assertExists(x('//*[@class="view-content"]'));
+    });
 
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/studyrooms/competencias/courses');
-  });
+    casper.then(function(){
+        casper.click("a[href='/es/list-of-classrooms']");
+        this.echo('Clicked in Aula');
+    });
 
-  casper.back();
+    casper.then(function() {
+        test.assertExists(x('//*[@id="page-title"]'));
+    });
 
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/compliance']");
-    this.echo('Clicked in Compliance');
-  });
+    casper.then(function() {
+        test.assertExists(x('//*[@class="view-header"]'));
+    });
 
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/studyrooms/compliance/courses');
-  });
+    casper.then(function() {
+        test.assertExists(x('//form[@id="views-exposed-form-classrooms-page"]'));
+    });
 
-  casper.back();
+    casper.then(function() {
+        test.assertExists(x('//*[@class="view-content"]'));
+    });
 
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/comunicaci%C3%B3n-corporativa']");
-    this.echo('Clicked in Comunicación corporativa');
-  });
+    casper.then(function() {
+        casper.click("a[href='/es/user/logout']");
+        this.echo('⌚ Log out....');
+    });
 
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/studyrooms/comunicación-corporativa/courses');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/finanzas']");
-    this.echo('Clicked in Finanzas');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/studyrooms/finanzas/courses');
-  });
-
-  casper.run(function() {
-    test.done();
-  });
+    casper.run(function() {
+        test.done();
+    });
 
 });

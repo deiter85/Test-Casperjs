@@ -5,12 +5,11 @@
  * Feel free to change them to suit your needs.
  */
 
-casper.test.begin('Campus Abbvie - User', 6, function suite(test) {
+casper.test.begin('Campus Abbvie - User', 4, function suite(test){
   
-  casper.start();
-  
-  casper.thenOpen('/user', function() {
+  casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function(){
     test.assertHttpStatus(200, 'Homepage was loaded successfully.');
+   	this.echo(this.getCurrentUrl());
   });
   
   casper.then(function(){
@@ -18,7 +17,7 @@ casper.test.begin('Campus Abbvie - User', 6, function suite(test) {
   });
   
   casper.then(function(){
-    casper.click("a[href='/user/password']");
+    casper.click("a[href='/es/user/password']");
     this.echo('Clicked in Request new password');
   });
   
@@ -30,21 +29,6 @@ casper.test.begin('Campus Abbvie - User', 6, function suite(test) {
   
   casper.then(function(){
     test.assertExists('form#user-pass', 'Request new password form is present.');
-  });
-
-  casper.then(function(){
-    casper.click("a[href='/user/register']");
-    this.echo('Clicked in Create new account');
-  });
-  
-  casper.wait(750, function() {});
-  
-  casper.then(function(){
-    test.assertHttpStatus(200, 'Create new account page was loaded successfully.');
-  });
-  
-  casper.then(function(){
-    test.assertExists('form#user-register-form', 'Create new account form is present.');
   });
   
   casper.run(function() {

@@ -1,81 +1,71 @@
-casper.test.begin('Campus Abbvie - Test3', 12, function suite(test) {
+var x = require('casper').selectXPath;
+var userName = ****;
+var password = ****;
 
-  casper.start();
-  
-  casper.thenOpen('/es', function() {});
+casper.test.begin('Campus Abbvie - Test3', 11, function suite(test) {   
+	
+    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+        this.echo('⌚ Logging in....');
+            this.fill('form#user-login', {
+            'name': userName,
+            'pass': password
+        }, true);
+        this.echo('Homepage was loaded successfully.');
+    });
 
-  casper.then(function() {
-    casper.click("a[href='/es/annual-training']");
-    this.echo('Clicked in Formacion anual');
-  });
+    casper.wait(1000, function() {});  
 
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/annual-training');
-  });
+    casper.thenOpen('https://abbvie-wec.dev.aspgems.com/es/', function() {
+   	    test.assertExists(x('//*[@id="block-views-view-news-block-1"]'));
+    });
+    
+    casper.then(function(){		
+ 		test.assertExists(x('//*[@id="block-views-blog-block-last-posts"]'));
+ 	});
+    
+    casper.then(function(){
+ 		test.assertExists(x('//*[@id="block-views-course-ratings-block"]'));
+ 	});
+    
+    casper.then(function(){
+ 		test.assertExists(x('//*[@id="block-search-form"]'));
+ 	});
+    
+    casper.then(function(){
+ 		test.assertExists(x('//*[@id="block-views-courses-block-1"]'));
+ 	});
+    
+    casper.then(function(){
+ 		test.assertExists(x('//*[@id="block-views-usuario-block"]'));
+ 	});
+    
+    casper.then(function(){
+ 		test.assertExists(x('//*[@id="views_slideshow_cycle_teaser_section_courses-block_1"]'));
+ 	});
 
-  casper.back();
+    casper.then(function(){
+        test.assertExists(x('//*[@id="block-customblocks-image-wiki"]'));
+    });
 
-  casper.then(function() {
-    casper.click("a[href='/es/news']");
-    this.echo('Clicked in Noticias');
-    this
-  });
+    casper.then(function(){
+        test.assertExists(x('//*[@id="block-customblocks-image-suggestions"]'));
+    });
+    
+    casper.then(function(){
+        test.assertExists(x('//*[@class="site-logo"]'));
+    });
 
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/news');
-  });
+    casper.then(function(){
+        test.assertExists(x('//*[@id="footer"]'));
+    });
 
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/links']");
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/links');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/help']");
-    this.echo('Clicked in Ayuda');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/help');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/wiki']");
-    this.echo('Clicked in Wiki');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/wiki');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/contacts']");
-    this.echo('Clicked in Contactos');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('http://abbvie-wec.dev.aspgems.com/es/contacts');
-  });
-
-  casper.run(function() {
-    test.done();
-  });
+    casper.then(function() {
+        casper.click("a[href='/es/user/logout']");
+        this.echo('⌚ Log out....');
+    });
+  	
+    casper.run(function() {
+   		test.done(); 
+  	}); 
 
 });
