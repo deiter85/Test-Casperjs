@@ -23,7 +23,7 @@ casper.test.begin('Campus Abbvie - Test2', 9, function suite(test) {
     casper.wait(500, function() {});
 
     casper.then(function(){
-        test.assertHttpStatus(200, 'Request new password page was loaded successfully.');
+        test.assertHttpStatus(200, 'Request catalogue page was loaded successfully.');
         test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/catalogue');
     });
 
