@@ -15,7 +15,7 @@ casper.test.begin('Campus Abbvie - Test3', 11, function suite(test) {
 
     casper.wait(1000, function() {});  
 
-    casper.thenOpen('https://abbvie-wec.dev.aspgems.com/es/', function() {
+    casper.then(function() {
    	    test.assertExists(x('//*[@id="block-views-view-news-block-1"]'));
     });
     
