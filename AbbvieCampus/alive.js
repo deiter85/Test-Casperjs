@@ -1,10 +1,3 @@
-/**
- * Homepage tests.
- *
- * These tests make some assertions on a Drupal vanilla installation.
- * Feel free to change them to suit your needs.
- */
-
 casper.test.begin('Campus Abbvie - User', 4, function suite(test){
   
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function(){

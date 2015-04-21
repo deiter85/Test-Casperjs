@@ -13,7 +13,7 @@ casper.test.begin('Campus Abbvie - Test3', 11, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(1000, function() {});  
+    casper.wait(750, function() {});  
 
     casper.then(function() {
    	    test.assertExists(x('//*[@id="block-views-view-news-block-1"]'));

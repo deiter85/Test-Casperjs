@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test2', 9, function suite(test) {
+casper.test.begin('Campus Abbvie - Test2', 7, function suite(test) {
 
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -20,12 +20,7 @@ casper.test.begin('Campus Abbvie - Test2', 9, function suite(test) {
         this.echo('Clicked in Catalogo');
     });
 
-    casper.wait(500, function() {});
-
-    casper.then(function(){
-        test.assertHttpStatus(200, 'Request catalogue page was loaded successfully.');
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/catalogue');
-    });
+    casper.wait(750, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'));
