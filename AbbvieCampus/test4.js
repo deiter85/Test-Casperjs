@@ -1,23 +1,23 @@
 var userName = ****;
 var password = ****;
 var editor_allow = ["/es/node/add/plan-de-formaci-n-anual",
-					          "/es/node/add/classroom",
-					          "/es/node/add/help",
-					          "/es/node/add/blog-article",
-					          "/es/node/add/digital-certification",
-					          "/es/node/add/contact",
-					          "/es/node/add/course-request",
-					          "/es/node/add/course",
-					          "/es/node/add/link",
-					          "/es/node/add/faqs",
-					          "/es/node/add/forum",
-					          "/es/node/add/news",
-					          "/es/node/add/schedule-course",
-					          "/es/node/add/help-video",
-					          "/es/node/add/add-product"];
+					"/es/node/add/classroom",
+					"/es/node/add/help",
+					"/es/node/add/blog-article",
+					"/es/node/add/digital-certification",
+					"/es/node/add/contact",
+					"/es/node/add/course-request",
+					"/es/node/add/course",
+					"/es/node/add/link",
+					"/es/node/add/faqs",
+					"/es/node/add/forum",
+					"/es/node/add/news",
+					"/es/node/add/schedule-course",
+					"/es/node/add/help-video",
+					"/es/node/add/add-product"];
 var indice = 0;
 
-casper.test.begin('Campus Abbvie - Test4', 0, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test4', 15, function suite(test) {   
   
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
     this.echo('⌚ Logging in....');

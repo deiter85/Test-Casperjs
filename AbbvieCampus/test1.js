@@ -1,7 +1,7 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test1', 0, function suite(test) {
+casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
 
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
     this.echo('⌚ Logging in....');
@@ -15,7 +15,7 @@ casper.test.begin('Campus Abbvie - Test1', 0, function suite(test) {
   casper.wait(750, function() {});
 
   casper.then(function() {
-		test.assertTitle('AbbVie');
+	test.assertTitle('AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es');
   });

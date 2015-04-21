@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test5', 16, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test5', 15, function suite(test) {   
 	
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -23,15 +23,15 @@ casper.test.begin('Campus Abbvie - Test5', 16, function suite(test) {
     casper.wait(750, function() {});
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'));
+        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="page-header"]'));
+        test.assertExists(x('//*[@class="page-header"]'), 'Find an element matching: TEXTO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="position-selector"]'));
+        test.assertExists(x('//*[@id="position-selector"]'), 'Find an element matching: FORMULARIO DE BUSQUEDA');
     });
 
     casper.then(function(){
@@ -44,60 +44,56 @@ casper.test.begin('Campus Abbvie - Test5', 16, function suite(test) {
     casper.wait(750, function() {});
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="percentages"]'));
+        test.assertExists(x('//*[@class="percentages"]'), 'Find an element matching: CUADRO PORCENTAJE');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="print-area"]'));
+        test.assertExists(x('//*[@id="print-area"]'), 'Find an element matching: LISTA DE RESULTADOS');
     });
 
     casper.then(function(){
         casper.click("a[href='/es/my-training']");
-        this.echo('Clicked in Aula');
+        this.echo('Clicked in Mi formacion');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'));
+        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-header"]'));
+        test.assertExists(x('//*[@class="view-header"]'), 'Find an element matching: TEXTO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="mytrainingtabs"]'));
+        test.assertExists(x('//*[@class="mytrainingtabs"]'), 'Find an element matching: CUADRO TIPOS CURSOS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="pending"]'));
+        test.assertExists(x('//*[@id="pending"]'), 'Find an element matching: TITULO PENDIENTES');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="recommend"]'));
+        test.assertExists(x('//*[@id="recommend"]'), 'Find an element matching: TITULO RECOMENDADOS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="completed"]'));
+        test.assertExists(x('//*[@id="completed"]'), 'Find an element matching: TITULO COMPLETADOS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="certifications"]'));
+        test.assertExists(x('//*[@id="certifications"]'), 'Find an element matching: TITULO CERTIFICADOS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-empty"]'));
+        test.assertExists(x('//*[@id="block-views-my-training-block-3"]'), 'Find an element matching: CUADRO RECOMENDADOS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="block-views-my-training-block-3"]'));
+        test.assertExists(x('//*[@id="block-views-my-training-block-1"]'), 'Find an element matching: CUADRO COMPLETADOS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="block-views-my-training-block-1"]'));
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//*[@id="block-views-digital-certifications-block-1"]'));
+        test.assertExists(x('//*[@id="block-views-digital-certifications-block-1"]'), 'Find an element matching: CUADRO CERTIFICADOS');
     });
 
     casper.then(function() {

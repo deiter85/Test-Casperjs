@@ -13,7 +13,7 @@ casper.test.begin('Campus Abbvie - Test2', 7, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(500, function() {});
+    casper.wait(750, function() {});
 
     casper.then(function(){
         casper.click("a[href='/es/catalogue']");
@@ -23,15 +23,15 @@ casper.test.begin('Campus Abbvie - Test2', 7, function suite(test) {
     casper.wait(750, function() {});
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'));
+        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-filters"]'));
+        test.assertExists(x('//*[@class="view-filters"]'), 'Find an element matching: CUADRO DEL FORMULARIO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-content"]'));
+        test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: LISTA DE CURSOS');
     });
 
     casper.then(function(){
@@ -40,19 +40,19 @@ casper.test.begin('Campus Abbvie - Test2', 7, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'));
+        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-header"]'));
+        test.assertExists(x('//*[@class="view-header"]'), 'Find an element matching: TEXTO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//form[@id="views-exposed-form-classrooms-page"]'));
+        test.assertExists(x('//form[@id="views-exposed-form-classrooms-page"]'), 'Find an element matching: FORMULARIO BUSQUEDA AULA');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-content"]'));
+        test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: LISTA DE AULAS');
     });
 
     casper.then(function() {
