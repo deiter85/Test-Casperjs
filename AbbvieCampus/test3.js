@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test3', 11, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test3', 12, function suite(test) {   
 	
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -49,6 +49,10 @@ casper.test.begin('Campus Abbvie - Test3', 11, function suite(test) {
 
     casper.then(function(){
         test.assertExists(x('//*[@id="block-customblocks-image-suggestions"]'), 'Find an element matching: CUADRO IMAGEN SUGERENCIAS');
+    });
+
+    casper.then(function(){
+        test.assertExists(x('//*[@id="block-tagclouds-2"]'), 'Find an element matching: CUADRO TAG');
     });
     
     casper.then(function(){

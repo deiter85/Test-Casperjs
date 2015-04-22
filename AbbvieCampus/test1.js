@@ -1,7 +1,7 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
+casper.test.begin('Campus Abbvie - Test1', 31, function suite(test) {
 
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
     this.echo('⌚ Logging in....');
@@ -15,7 +15,7 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   casper.wait(750, function() {});
 
   casper.then(function() {
-	test.assertTitle('AbbVie');
+	  test.assertTitle('AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es');
   });
@@ -26,7 +26,6 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('Catálogo de actividades formativas | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/catalogue');
   });
@@ -39,7 +38,6 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('Aula | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/list-of-classrooms');
   });
@@ -52,7 +50,6 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('Foros | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum');
   });
@@ -65,7 +62,6 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('Itinerarios formativos | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/schedule-course-list');
   });
@@ -78,7 +74,6 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('Mi formación | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/my-training');
   });
@@ -91,7 +86,6 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('Point program | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/point-program');
   });
@@ -104,7 +98,6 @@ casper.test.begin('Campus Abbvie - Test1', 38, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('Canjea tus puntos | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/redeem-your-user-points');
   });

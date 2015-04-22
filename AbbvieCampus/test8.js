@@ -54,15 +54,15 @@ casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: CUADRO NOTICIAS');
+        test.assertExists(x('//div[@id="block-system-main"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: LISTA NOTICIAS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="item-list item-list-pager"]'), 'Find an element matching: SELECCION DE PAGINA DE NOTICIAS');
+        test.assertExists(x('//*[@class="pager"]'), 'Find an element matching: SELECCION DE PAGINA DE NOTICIAS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-footer"]'), 'Find an element matching: CUADRO AREA NEWS');
+        test.assertExists(x('//div[@class="view-footer"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: LISTA AREA NEWS');
     });
 
     casper.then(function() {

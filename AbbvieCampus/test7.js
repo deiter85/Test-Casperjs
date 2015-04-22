@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test7', 8, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test7',9, function suite(test) {   
 	
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -27,7 +27,7 @@ casper.test.begin('Campus Abbvie - Test7', 8, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="block-system-main"]'), 'Find an element matching: LISTA DOCUMENTOS');
+        test.assertExists(x('//*[@class="view-content ui-accordion ui-widget ui-helper-reset"]'), 'Find an element matching: LISTA DOCUMENTOS');
     });
 
     casper.then(function(){
@@ -42,15 +42,15 @@ casper.test.begin('Campus Abbvie - Test7', 8, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-header"]'), 'Find an element matching: TEXTO');
+        test.assertExists(x('//div[@id="block-system-main"]/div/div[@class="view-header"]'), 'Find an element matching: TEXTO');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: CUADRO CONTACTOS');
+        test.assertExists(x('//div[@id="block-system-main"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: CUADRO CONTACTOS');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-footer"]'), 'Find an element matching: CUADRO AREA DE CONTACTOS');
+        test.assertExists(x('//div[@class="view-footer"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: CUADRO AREA DE CONTACTOS');
     });
 
     casper.then(function(){
@@ -65,7 +65,11 @@ casper.test.begin('Campus Abbvie - Test7', 8, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="block-system-main"]'), 'Find an element matching: LISTA PREGUNTAS FRECUENTES');
+        test.assertExists(x('//*[@class="view-header"]'), 'Find an element matching: TEXTO');
+    });
+
+    casper.then(function() {
+        test.assertExists(x('//*[@class="view-content ui-accordion ui-widget ui-helper-reset"]'), 'Find an element matching: LISTA PREGUNTAS FRECUENTES');
     });
 
     casper.then(function() {

@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test2', 7, function suite(test) {
+casper.test.begin('Campus Abbvie - Test2', 8, function suite(test) {
 
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -27,11 +27,15 @@ casper.test.begin('Campus Abbvie - Test2', 7, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="view-filters"]'), 'Find an element matching: CUADRO DEL FORMULARIO');
+        test.assertExists(x('//*[@id="views-exposed-form-courses-page"]'), 'Find an element matching: CUADRO DEL FORMULARIO');
     });
 
     casper.then(function() {
         test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: LISTA DE CURSOS');
+    });
+
+    casper.then(function() {
+        test.assertExists(x('//*[@class="pager"]'), 'Find an element matching: PAGINAS');
     });
 
     casper.then(function(){

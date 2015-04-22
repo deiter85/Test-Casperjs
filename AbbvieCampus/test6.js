@@ -94,7 +94,7 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="content"]'), 'Find an element matching: TITULO');
+        test.assertExists(x('//*[@id="commerce-checkout-form-checkout"]'), 'Find an element matching: FORMULARIO');
     });
 
     casper.then(function() {
