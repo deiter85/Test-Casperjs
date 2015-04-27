@@ -13,14 +13,14 @@ casper.test.begin('Campus Abbvie - Test2', 8, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function(){
         casper.click("a[href='/es/catalogue']");
         this.echo('Clicked in Catalogo');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');

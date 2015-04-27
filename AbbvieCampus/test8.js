@@ -13,14 +13,14 @@ casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function(){
         casper.click('a[href="/es/help"]');
         this.echo('Clicked in Ayuda');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -47,7 +47,7 @@ casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {
         this.echo('Clicked in Noticias');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -62,7 +62,7 @@ casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//div[@class="view-footer"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: LISTA AREA NEWS');
+        test.assertExists(x('//div[@class="view-footer"]'), 'Find an element matching: LISTA AREA NEWS');
     });
 
     casper.then(function() {

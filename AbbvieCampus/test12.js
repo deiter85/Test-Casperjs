@@ -27,14 +27,14 @@ casper.test.begin('Campus Abbvie - Test12', 14, function suite(test) {
     this.echo('Homepage was loaded successfully.');
   });
 
-  casper.wait(750, function() {});
+  casper.wait(500, function() {});
 
   casper.then(function(){
     casper.click('a[href="/es/links"]');
     this.echo('Clicked in Enlaces');
   });
 
-  casper.wait(750, function() {});
+  casper.wait(500, function() {});
   
   for (i = 0; i < links.length; i++) {     
     casper.then(function() {
@@ -45,11 +45,10 @@ casper.test.begin('Campus Abbvie - Test12', 14, function suite(test) {
         casper.click('a[href="' + links[indice++] + '"]')  	
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertHttpStatus(200);
-        //test.assertUrlMatch(links[indice++]);
     });
 
     casper.thenOpen('https://abbvie-wec.dev.aspgems.com/es/links', function() {});

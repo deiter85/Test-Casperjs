@@ -43,7 +43,7 @@ casper.test.begin('Campus Abbvie - Test11', 10, function suite(test) {
         this.echo('Clicked in WIKI');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');

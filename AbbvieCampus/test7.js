@@ -13,14 +13,14 @@ casper.test.begin('Campus Abbvie - Test7',9, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function(){
         casper.click('a[href="/es/annual-training"]');
         this.echo('Clicked in Formacion anual');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -35,7 +35,7 @@ casper.test.begin('Campus Abbvie - Test7',9, function suite(test) {
         this.echo('Clicked in Contactos');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -50,7 +50,7 @@ casper.test.begin('Campus Abbvie - Test7',9, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//div[@class="view-footer"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: CUADRO AREA DE CONTACTOS');
+        test.assertExists(x('//div[@class="view-footer"]'), 'Find an element matching: CUADRO AREA DE CONTACTOS');
     });
 
     casper.then(function(){
@@ -58,7 +58,7 @@ casper.test.begin('Campus Abbvie - Test7',9, function suite(test) {
         this.echo('Clicked in FAQs');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');

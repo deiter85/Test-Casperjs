@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test3', 12, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test3', 13, function suite(test) {   
 	
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -13,7 +13,7 @@ casper.test.begin('Campus Abbvie - Test3', 12, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(750, function() {});  
+    casper.wait(500, function() {});  
 
     casper.then(function() {
    	    test.assertExists(x('//*[@id="block-views-view-news-block-1"]'), 'Find an element matching: CUADRO NOTICIAS');
@@ -24,7 +24,11 @@ casper.test.begin('Campus Abbvie - Test3', 12, function suite(test) {
  	});
     
     casper.then(function(){
- 		test.assertExists(x('//*[@id="block-views-course-ratings-block"]'), 'Find an element matching: CUADRO CURSOS MEJOR VALORADOS');
+ 		test.assertExists(x('//*[@id="block-abbvie-best-rated-courses-abbvie-best-rated-courses-home"]'), 'Find an element matching: CUADRO CURSOS MEJOR VALORADOS');
+ 	});
+
+ 	casper.then(function(){
+ 		test.assertExists(x('//*[@id="block-views-area-news-block-1"]'), 'Find an element matching: CUADRO AREA NEWS');
  	});
     
     casper.then(function(){
@@ -40,7 +44,7 @@ casper.test.begin('Campus Abbvie - Test3', 12, function suite(test) {
  	});
     
     casper.then(function(){
- 		test.assertExists(x('//*[@id="views_slideshow_cycle_teaser_section_courses-block_1"]'), 'Find an element matching: CUADRO INFORMACION RECOMENDADO');
+ 		test.assertExists(x('//*[@id="views_slideshow_cycle_teaser_section_courses-block_1"]'), 'Find an element matching: INFORMACION RECOMENDADO');
  	});
 
     casper.then(function(){

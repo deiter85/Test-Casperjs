@@ -13,14 +13,14 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function(){
         casper.click('a[href="/es/point-program"]');
         this.echo('Clicked in Programa de puntos/Informacion');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -39,7 +39,7 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
         this.echo('Clicked in Redeem your user points from Point program');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertHttpStatus(200);
@@ -51,7 +51,7 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
         this.echo('Clicked in Redeem your user points from Block inner');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -82,7 +82,7 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
         this.echo('Clicked in Canjear');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertHttpStatus(200);
@@ -110,7 +110,7 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
         this.echo('Clicked in Cancelar');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertHttpStatus(200);

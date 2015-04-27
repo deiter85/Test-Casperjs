@@ -14,7 +14,7 @@ casper.test.begin('Campus Abbvie - User', 4, function suite(test){
     this.echo('Clicked in Request new password');
   });
   
-  casper.wait(750, function() {});
+  casper.wait(500, function() {});
   
   casper.then(function(){
     test.assertHttpStatus(200, 'Request new password page was loaded successfully.');

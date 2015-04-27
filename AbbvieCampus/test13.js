@@ -13,7 +13,7 @@ casper.test.begin('Campus Abbvie - Test13', 4, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function(){
         this.echo('⌚ Search....');
@@ -23,7 +23,7 @@ casper.test.begin('Campus Abbvie - Test13', 4, function suite(test) {
         this.echo('Page was loaded successfully.');
     });
 
-    casper.wait(750, function() {});
+    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');

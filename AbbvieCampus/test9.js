@@ -1,7 +1,7 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
+casper.test.begin('Campus Abbvie - Test9', 42, function suite(test) {
 
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
     this.echo('⌚ Logging in....');
@@ -12,7 +12,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
     this.echo('Homepage was loaded successfully.');
   });
 
-  casper.wait(750, function() {});
+  casper.wait(500, function() {});
 
   casper.then(function() {
     casper.click("a[href='/es/list-of-classrooms']");
@@ -44,13 +44,133 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/community-relations']");
-    this.echo('Clicked in Community relations');
+    casper.click("a[href='/es/studyrooms/competencias']");
+    this.echo('Clicked in Competencias');
   });
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/community-relations/home');
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/competencias/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/digital']");
+    this.echo('Clicked in Digital');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/digital/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/formacion']");
+    this.echo('Clicked in Formacion');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/formacion/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/gestion-sanitaria']");
+    this.echo('Clicked in Gestion sanitaria');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/gestion-sanitaria/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/innovacion']");
+    this.echo('Clicked in Innovacion');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/innovacion/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/marketing']");
+    this.echo('Clicked in Marketing');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/marketing/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/on-boarding']");
+    this.echo('Clicked in On Boarding');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/boarding/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/regulacion-y-financiacion']");
+    this.echo('Clicked in Regulacion y financiacion');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/regulacion-y-financiacion/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/ventas']");
+    this.echo('Clicked in Ventas');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/ventas/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/abbvie-way']");
+    this.echo('Clicked in Abbvie way');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/abbvie-way/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/biosimilares']");
+    this.echo('Clicked in Biosimilares');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/biosimilares/home');
   });
 
   casper.back();
@@ -147,138 +267,6 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.then(function() {
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/relaciones-institucionales/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/abbvie-way']");
-    this.echo('Clicked in Abbvie way');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/abbvie-way/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/biosimilares']");
-    this.echo('Clicked in Biosimilares');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/biosimilares/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/competencias']");
-    this.echo('Clicked in Competencias');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/competencias/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/digital']");
-    this.echo('Clicked in Digital');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/digital/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/formacion']");
-    this.echo('Clicked in Formacion');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/formacion/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/gestion-sanitaria']");
-    this.echo('Clicked in Gestion sanitaria');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/gestion-sanitaria/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/innovacion']");
-    this.echo('Clicked in Inovacion');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/innovacion/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/marketing']");
-    this.echo('Clicked in Marketing');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/marketing/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/boarding']");
-    this.echo('Clicked in Boarding');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/boarding/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/regulacion-y-financiacion']");
-    this.echo('Clicked in Regulacion y financiacion');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/regulacion-y-financiacion/home');
-  });
-
-  casper.back();
-
-  casper.then(function() {
-    casper.click("a[href='/es/studyrooms/ventas']");
-    this.echo('Clicked in Ventas');
-  });
-
-  casper.then(function() {
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/ventas/home');
   });
 
   casper.then(function() {

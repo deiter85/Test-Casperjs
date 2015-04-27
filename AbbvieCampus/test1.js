@@ -1,7 +1,7 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test1', 31, function suite(test) {
+casper.test.begin('Campus Abbvie - Test1', 33, function suite(test) {
 
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
     this.echo('⌚ Logging in....');
@@ -12,7 +12,7 @@ casper.test.begin('Campus Abbvie - Test1', 31, function suite(test) {
     this.echo('Homepage was loaded successfully.');
   });
 
-  casper.wait(750, function() {});
+  casper.wait(500, function() {});
 
   casper.then(function() {
 	  test.assertTitle('AbbVie');
@@ -187,6 +187,18 @@ casper.test.begin('Campus Abbvie - Test1', 31, function suite(test) {
   casper.then(function() {
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/faqs');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/suggestions']");
+    this.echo('Clicked in Sugerencias');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/suggestions');
   });
 
   casper.then(function() {
