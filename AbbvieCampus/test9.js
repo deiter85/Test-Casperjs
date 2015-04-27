@@ -1,7 +1,7 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test9', 42, function suite(test) {
+casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
 
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
     this.echo('⌚ Logging in....');
@@ -122,7 +122,7 @@ casper.test.begin('Campus Abbvie - Test9', 42, function suite(test) {
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/boarding/home');
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/on-boarding/home');
   });
 
   casper.back();
@@ -267,6 +267,18 @@ casper.test.begin('Campus Abbvie - Test9', 42, function suite(test) {
   casper.then(function() {
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/relaciones-institucionales/home');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click("a[href='/es/studyrooms/community-relations']");
+    this.echo('Clicked in Community relations');
+  });
+
+  casper.then(function() {
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/studyrooms/community-relations/home');
   });
 
   casper.then(function() {
