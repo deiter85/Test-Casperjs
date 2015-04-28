@@ -16,7 +16,7 @@ casper.test.begin('Campus Abbvie - Test2', 8, function suite(test) {
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click("a[href='/es/catalogue']");
+        casper.click('a[href="/es/catalogue"]');
         this.echo('Clicked in Catalogo');
     });
 
@@ -39,7 +39,7 @@ casper.test.begin('Campus Abbvie - Test2', 8, function suite(test) {
     });
 
     casper.then(function(){
-        casper.click("a[href='/es/list-of-classrooms']");
+        casper.click('a[href="/es/list-of-classrooms"]');
         this.echo('Clicked in Aula');
     });
 
@@ -60,7 +60,7 @@ casper.test.begin('Campus Abbvie - Test2', 8, function suite(test) {
     });
 
     casper.then(function() {
-        casper.click("a[href='/es/user/logout']");
+        casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');
     });
 

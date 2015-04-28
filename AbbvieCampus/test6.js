@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test6', 21, function suite(test) {   
 	
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -85,6 +85,7 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
     casper.wait(500, function() {});
 
     casper.then(function() {
+        test.assertTitle('Tramitar compra | AbbVie');
         test.assertHttpStatus(200);
         test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/checkout/1');
     });
@@ -118,7 +119,7 @@ casper.test.begin('Campus Abbvie - Test6', 19, function suite(test) {
     });
 
     casper.then(function() {
-        casper.click("a[href='/es/user/logout']");
+        casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');
     });
 

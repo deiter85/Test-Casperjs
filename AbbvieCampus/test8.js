@@ -66,7 +66,7 @@ casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {
     });
 
     casper.then(function() {
-        casper.click("a[href='/es/user/logout']");
+        casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');
     });
 

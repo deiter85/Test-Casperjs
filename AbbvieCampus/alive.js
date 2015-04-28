@@ -9,7 +9,7 @@ casper.test.begin('Campus Abbvie - User', 4, function suite(test){
   });
   
   casper.then(function(){
-    casper.click("a[href='/es/user/password']");
+    casper.click('a[href="/es/user/password"]');
     this.echo('Clicked in Request new password');
   });
   

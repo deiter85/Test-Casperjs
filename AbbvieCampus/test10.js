@@ -22,6 +22,10 @@ casper.test.begin('Campus Abbvie - Test10', 11, function suite(test) {
 
     casper.wait(500, function() {});
 
+    /*casper.then(function() {
+        test.assertTitle('User Points | AbbVie');
+    });*/
+
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
     });
@@ -36,6 +40,10 @@ casper.test.begin('Campus Abbvie - Test10', 11, function suite(test) {
     });
 
     casper.wait(500, function() {});
+
+    /*casper.then(function() {
+        test.assertTitle('uk_editor | AbbVie');
+    });*/
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -53,6 +61,12 @@ casper.test.begin('Campus Abbvie - Test10', 11, function suite(test) {
         casper.click('a[href="/es/myuserpoints"]');
         this.echo('Clicked in Ver transacciones de puntos');
     });
+
+    casper.wait(500, function() {});
+
+    /*casper.then(function() {
+        test.assertTitle('Points para uk_editor | AbbVie');
+    });*/
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -86,7 +100,7 @@ casper.test.begin('Campus Abbvie - Test10', 11, function suite(test) {
     });
 
     casper.then(function() {
-        casper.click("a[href='/es/user/logout']");
+        casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');
     });
 

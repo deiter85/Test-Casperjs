@@ -15,12 +15,12 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.wait(500, function() {});
 
   casper.then(function() {
-    casper.click("a[href='/es/list-of-classrooms']");
+    casper.click('a[href="/es/list-of-classrooms"]');
     this.echo('Clicked in Aula');
   });
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/abbvie-care']");
+    casper.click('a[href="/es/studyrooms/abbvie-care"]');
     this.echo('Clicked in Abbvie-care');
   });
 
@@ -32,7 +32,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/analisis-de-negocio']");
+    casper.click('a[href="/es/studyrooms/analisis-de-negocio"]');
     this.echo('Clicked in Analisis de negocio');
   });
 
@@ -44,7 +44,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/competencias']");
+    casper.click('a[href="/es/studyrooms/competencias"]');
     this.echo('Clicked in Competencias');
   });
 
@@ -56,7 +56,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/digital']");
+    casper.click('a[href="/es/studyrooms/digital"]');
     this.echo('Clicked in Digital');
   });
 
@@ -68,7 +68,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/formacion']");
+    casper.click('a[href="/es/studyrooms/formacion"]');
     this.echo('Clicked in Formacion');
   });
 
@@ -80,7 +80,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/gestion-sanitaria']");
+    casper.click('a[href="/es/studyrooms/gestion-sanitaria"]');
     this.echo('Clicked in Gestion sanitaria');
   });
 
@@ -92,7 +92,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/innovacion']");
+    casper.click('a[href="/es/studyrooms/innovacion"]');
     this.echo('Clicked in Innovacion');
   });
 
@@ -104,7 +104,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/marketing']");
+    casper.click('a[href="/es/studyrooms/marketing"]');
     this.echo('Clicked in Marketing');
   });
 
@@ -116,7 +116,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/on-boarding']");
+    casper.click('a[href="/es/studyrooms/on-boarding"]');
     this.echo('Clicked in On Boarding');
   });
 
@@ -128,7 +128,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/regulacion-y-financiacion']");
+    casper.click('a[href="/es/studyrooms/regulacion-y-financiacion"]');
     this.echo('Clicked in Regulacion y financiacion');
   });
 
@@ -140,7 +140,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/ventas']");
+    casper.click('a[href="/es/studyrooms/ventas"]');
     this.echo('Clicked in Ventas');
   });
 
@@ -152,7 +152,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/abbvie-way']");
+    casper.click('a[href="/es/studyrooms/abbvie-way"]');
     this.echo('Clicked in Abbvie way');
   });
 
@@ -164,7 +164,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/biosimilares']");
+    casper.click('a[href="/es/studyrooms/biosimilares"]');
     this.echo('Clicked in Biosimilares');
   });
 
@@ -176,7 +176,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/compliance']");
+    casper.click('a[href="/es/studyrooms/compliance"]');
     this.echo('Clicked in Compliance');
   });
 
@@ -188,7 +188,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/finanzas']");
+    casper.click('a[href="/es/studyrooms/finanzas"]');
     this.echo('Clicked in Finanzas');
   });
 
@@ -200,7 +200,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/futurefit-20']");
+    casper.click('a[href="/es/studyrooms/futurefit-20"]');
     this.echo('Clicked in Futurefit 2.0');
   });
 
@@ -212,7 +212,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/ingles']");
+    casper.click('a[href="/es/studyrooms/ingles"]');
     this.echo('Clicked in Ingles');
   });
 
@@ -224,7 +224,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/investigacion-clinica']");
+    casper.click('a[href="/es/studyrooms/investigacion-clinica"]');
     this.echo('Clicked in Investigacion clinica');
   });
 
@@ -236,7 +236,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/nuevas-tecnologias']");
+    casper.click('a[href="/es/studyrooms/nuevas-tecnologias"]');
     this.echo('Clicked in Nuevas tecnologias');
   });
 
@@ -248,7 +248,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   casper.back();
 
   casper.then(function() {
-    casper.click("a[href='/es/studyrooms/producto']");
+    casper.click('a[href="/es/studyrooms/producto"]');
     this.echo('Clicked in Producto');
   });
 
@@ -282,7 +282,7 @@ casper.test.begin('Campus Abbvie - Test9', 44, function suite(test) {
   });
 
   casper.then(function() {
-    casper.click("a[href='/es/user/logout']");
+    casper.click('a[href="/es/user/logout"]');
     this.echo('⌚ Log out....');
   });
 

@@ -1,19 +1,19 @@
 var userName = ****;
 var password = ****;
 var links = ["http://directo.avanzo.com/abbvie/campus/",
-					        "https://abbvie.sumtotalsystems.com/elearningcenter/app/management/LMS_LearnerHome.aspx",
-					        "http://ppgisotrain.web.abbott.com/isotrain/",
-					        "http://library.oneabbott.com",
-					        "http://www.campusabbvie.com/sites/default/files/programa_de_blogs_2015_panel_y_plan_0.pdf",
-					        "http://library.oneabbott.com/Pages/Training%20and%20Learning/Training.aspx",
-					        "https://www.coursera.org/",
-					        "http://campus.ie.edu",
-					        "http://www.khanacademy.org",
-					        "http://miriadax.net",
-					        "http://ourabbvie.oneabbott.com/en/Pages/Home.aspx",
-					        "http://ourabbvie.oneabbott.com/en/es/Pages/default.aspx",
-					        "https://abbviehr.oneabbott.com/",
-					        "http://abbvie.com"];
+					   "https://abbvie.sumtotalsystems.com/elearningcenter/app/management/LMS_LearnerHome.aspx",
+					   "http://ppgisotrain.web.abbott.com/isotrain/",
+					   "http://library.oneabbott.com",
+					   "http://www.campusabbvie.com/sites/default/files/programa_de_blogs_2015_panel_y_plan_0.pdf",
+					   "http://library.oneabbott.com/Pages/Training%20and%20Learning/Training.aspx",
+					   "https://www.coursera.org/",
+					   "http://campus.ie.edu",
+					   "http://www.khanacademy.org",
+					   "http://miriadax.net",
+					   "http://ourabbvie.oneabbott.com/en/Pages/Home.aspx",
+					   "http://ourabbvie.oneabbott.com/en/es/Pages/default.aspx",
+					   "https://abbviehr.oneabbott.com/",
+					   "http://abbvie.com"];
 var indice = 0;
 
 casper.test.begin('Campus Abbvie - Test12', 14, function suite(test) {   
@@ -56,8 +56,8 @@ casper.test.begin('Campus Abbvie - Test12', 14, function suite(test) {
   }
   
   casper.then(function() {
-		('a[href="/es/user/logout"]');
-		this.echo('⌚ Log out....');
+    casper.click('a[href="/es/user/logout"]');
+    this.echo('⌚ Log out....');
   });
   
   casper.run(function() {

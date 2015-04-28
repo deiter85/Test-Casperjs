@@ -16,7 +16,7 @@ casper.test.begin('Campus Abbvie - Test5', 18, function suite(test) {
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click("a[href='/es/schedule-course-list']");
+        casper.click('a[href="/es/schedule-course-list"]');
         this.echo('Clicked in Itinerarios formativos');
     });
 
@@ -68,7 +68,7 @@ casper.test.begin('Campus Abbvie - Test5', 18, function suite(test) {
     });
 
     casper.then(function(){
-        casper.click("a[href='/es/my-training']");
+        casper.click('a[href="/es/my-training"]');
         this.echo('Clicked in Mi formacion');
     });
 
@@ -111,7 +111,7 @@ casper.test.begin('Campus Abbvie - Test5', 18, function suite(test) {
     });
 
     casper.then(function() {
-        casper.click("a[href='/es/user/logout']");
+        casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');
     });
 
