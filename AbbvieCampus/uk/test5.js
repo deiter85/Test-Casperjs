@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test5', 18, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test5 - My training', 9, function suite(test) {   
 	
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -13,66 +13,14 @@ casper.test.begin('Campus Abbvie - Test5', 18, function suite(test) {
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(500, function() {});
-
-    casper.then(function(){
-        casper.click('a[href="/uk/schedule-course-list"]');
-        this.echo('Clicked in Schedule Course List');
-    });
-
-    casper.wait(500, function() {});
-
-    casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//*[@class="page-header"]'), 'Find an element matching: TEXT');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//*[@id="position-selector"]'), 'Find an element matching: SEARCH FORM');
-    });
-
-    casper.then(function() {
-        test.assertNotVisible(x('//*[@class="percentages"]'), 'Selector is not visible: PERCENTAGES FRAME');
-    });
-
-    casper.then(function() {
-        test.assertNotVisible(x('//*[@id="print-area"]'), 'Selector is not visible: LIST OF RESULTS');
-    });
-
-    casper.then(function(){
-        this.fill('form#position-selector', {
-            'posicitions': '2697',
-        }, true);
-        this.echo('Clicked in Mostrar itinerario');
-    });
-
-    casper.wait(500, function() {});
-
-    casper.then(function() {
-        test.assertExists(x('//*[@class="percentages"]'), 'Find an element matching: PERCENTAGES FRAME');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//*[@id="print-area"]'), 'Find an element matching: LIST OF RESULTS');
-    });
-
-    casper.then(function() {
-        test.assertVisible(x('//*[@class="percentages"]'), 'Selector is visible: PERCENTAGES FRAME');
-    });
-
-    casper.then(function() {
-        test.assertVisible(x('//*[@id="print-area"]'), 'Selector is visible: LIST DE RESULTS');
-    });
+    casper.wait(500, function() {});    
 
     casper.then(function(){
         casper.click('a[href="/uk/my-training"]');
         this.echo('Clicked in My training');
     });
 
-    casper.wait(500, function() {});
+    casper.wait(1000, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');

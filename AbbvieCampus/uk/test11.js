@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test11 Links and Wiki', 10, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test11 - Links and Wiki', 10, function suite(test) {   
     
     casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
         this.echo('⌚ Logging in....');

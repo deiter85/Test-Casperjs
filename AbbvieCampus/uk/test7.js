@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test7 - Annual training, Contacts y FAQs',9, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test7 - Annual training, Contacts y FAQs', 8, function suite(test) {   
     
     casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
         this.echo('⌚ Logging in....');
@@ -24,10 +24,6 @@ casper.test.begin('Campus Abbvie - Test7 - Annual training, Contacts y FAQs',9, 
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//*[@class="view-content ui-accordion ui-widget ui-helper-reset"]'), 'Find an element matching: LIST OF  DOCUMENTS');
     });
 
     casper.then(function(){
