@@ -2,8 +2,8 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {   
-    
+casper.test.begin('Campus Abbvie - Test2 - Catalogo y Aula', 8, function suite(test) {
+
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
@@ -16,11 +16,32 @@ casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click('a[href="/es/help"]');
-        this.echo('Clicked in Ayuda');
+        casper.click('a[href="/es/catalogue"]');
+        this.echo('Clicked in Catalogo');
     });
 
     casper.wait(500, function() {});
+
+    casper.then(function() {
+        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
+    });
+
+    casper.then(function() {
+        test.assertExists(x('//*[@id="views-exposed-form-courses-page"]'), 'Find an element matching: CUADRO DEL FORMULARIO');
+    });
+
+    casper.then(function() {
+        test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: LISTA DE CURSOS');
+    });
+
+    casper.then(function() {
+        test.assertExists(x('//*[@class="pager"]'), 'Find an element matching: PAGINAS');
+    });
+
+    casper.then(function(){
+        casper.click('a[href="/es/list-of-classrooms"]');
+        this.echo('Clicked in Aula');
+    });
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -31,38 +52,11 @@ casper.test.begin('Campus Abbvie - Test8', 9, function suite(test) {
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="views-table cols-3"]'), 'Find an element matching: TABLA');
+        test.assertExists(x('//form[@id="views-exposed-form-classrooms-page"]'), 'Find an element matching: FORMULARIO BUSQUEDA AULA');
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@class="views-table cols-3"]/thead'), 'Find an element matching: NOMBRE DE LAS COLUMNAS');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//*[@class="views-table cols-3"]/tbody'), 'Find an element matching: LISTA DE ITEMS');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/es/news"]');
-        this.echo('Clicked in Noticias');
-    });
-
-    casper.wait(500, function() {});
-
-    casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//div[@id="block-system-main"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: LISTA NOTICIAS');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//*[@class="pager"]'), 'Find an element matching: SELECCION DE PAGINA DE NOTICIAS');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//div[@class="view-footer"]'), 'Find an element matching: LISTA AREA NEWS');
+        test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: LISTA DE AULAS');
     });
 
     casper.then(function() {

@@ -18,7 +18,7 @@ var editor_allow = ["/es/node/add/plan-de-formaci-n-anual",
                     "/es/node/add/product"];
 var indice = 0;
 
-casper.test.begin('Campus Abbvie - Test4', 16, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test4 - Nodos add', 16, function suite(test) {   
   
   casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
     this.echo('⌚ Logging in....');

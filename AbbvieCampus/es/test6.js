@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test6', 21, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Programa de Puntos/Canjear Puntos', 21, function suite(test) {   
 	
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -36,7 +36,7 @@ casper.test.begin('Campus Abbvie - Test6', 21, function suite(test) {
 
     casper.then(function(){
         casper.click('a[href="redeem-your-user-points"]');
-        this.echo('Clicked in Redeem your user points from Point program');
+        this.echo('Clicked in Redeem your user points en Programa de puntos/Informacion');
     });
 
     casper.wait(500, function() {});
@@ -48,7 +48,7 @@ casper.test.begin('Campus Abbvie - Test6', 21, function suite(test) {
 
     casper.then(function(){
         casper.click('a[href="/es/redeem-your-user-points"]');
-        this.echo('Clicked in Redeem your user points from Block inner');
+        this.echo('Clicked in Programa de puntos/Canjear puntos');
     });
 
     casper.wait(500, function() {});

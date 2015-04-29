@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test11', 10, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test11 - Enlaces y Wiki', 10, function suite(test) {   
     
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -40,7 +40,7 @@ casper.test.begin('Campus Abbvie - Test11', 10, function suite(test) {
 
     casper.then(function(){
         casper.click('a[href="/es/wiki"]');
-        this.echo('Clicked in WIKI');
+        this.echo('Clicked in Wiki');
     });
 
     casper.wait(500, function() {});
