@@ -1,5 +1,5 @@
-var userName = ****;
-var password = ****;
+var userName = 'uk_editor';
+var password = 'secret';
 
 casper.test.begin('Campus Abbvie - Test1 - Control Menu de Pagina Principal', 45, function suite(test) {
 
@@ -47,12 +47,12 @@ casper.test.begin('Campus Abbvie - Test1 - Control Menu de Pagina Principal', 45
   casper.back();
 
   casper.then(function() {
-    casper.click('a[href="/es/forum"]');
-    this.echo('Clicked in Foros');
+    casper.click('a[href="/es/forum/1611"]');
+    this.echo('Clicked in Foro');
   });
 
   casper.then(function() {
-    test.assertTitle('Foros | AbbVie');
+    test.assertTitle('Aulas | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum');
   });
