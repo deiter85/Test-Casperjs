@@ -254,4 +254,3 @@ casper.test.begin('Campus Abbvie - Test1 - Control Menu de Pagina Principal', 42
   });
 
 });
-<a style="" href="" title="" class="sf-depth-2 active">Información</a>
