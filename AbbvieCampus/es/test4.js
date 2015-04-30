@@ -35,6 +35,8 @@ casper.test.begin('Campus Abbvie - Test4 - Nodos add', 16, function suite(test) 
       	test.assertHttpStatus(200);
     });
   }
+
+  casper.wait(500, function() {});
   
   casper.then(function() {
     casper.click('a[href="/es/user/logout"]');

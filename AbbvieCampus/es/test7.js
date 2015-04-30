@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test7 - Formacion Anual, Contactos y FAQs',9, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test7 - Formacion Anual y FAQs',5, function suite(test) {   
 	
     casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -28,29 +28,6 @@ casper.test.begin('Campus Abbvie - Test7 - Formacion Anual, Contactos y FAQs',9,
 
     casper.then(function() {
         test.assertExists(x('//*[@class="view-content ui-accordion ui-widget ui-helper-reset"]'), 'Find an element matching: LISTA DOCUMENTOS');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/es/contacts"]');
-        this.echo('Clicked in Contactos');
-    });
-
-    casper.wait(500, function() {});
-
-    casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//div[@id="block-system-main"]/div/div[@class="view-header"]'), 'Find an element matching: TEXTO');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//div[@id="block-system-main"]/div/div[@class="view-content"]/div[@class="item-list"]'), 'Find an element matching: CUADRO CONTACTOS');
-    });
-
-    casper.then(function() {
-        test.assertExists(x('//div[@class="view-footer"]'), 'Find an element matching: CUADRO AREA DE CONTACTOS');
     });
 
     casper.then(function(){

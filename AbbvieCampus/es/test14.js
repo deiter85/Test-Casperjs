@@ -28,7 +28,6 @@ var menueditor_admin = ["/es/admin/structure/entity-type/user_awards/user_awards
                         "/es/admin-classrooms",
                         "/es/admin-help/help",
                         "/es/admin/content/comment",
-                        "/es/admin-contacts",
                         "/es/admin-courses",
                         "/es/admin-link",
                         "/es/admin-formacion-anual",

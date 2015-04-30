@@ -56,7 +56,7 @@ casper.test.begin('Campus Abbvie - Test3 - Homepage', 13, function suite(test) {
     });
 
     casper.then(function(){
-        test.assertExists(x('//*[@id="block-tagclouds-2"]'), 'Find an element matching: TAG FRAME');
+        test.assertExists(x('//*[@id="block-tagclouds-3"]'), 'Find an element matching: TAG FRAME');
     });
     
     casper.then(function(){

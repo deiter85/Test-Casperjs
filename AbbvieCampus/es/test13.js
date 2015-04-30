@@ -16,21 +16,8 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click('a[href="/es/forum"]');
-        this.echo('Clicked in Foros');
-    });
-
-    casper.wait(500, function() {});
-
-    casper.then(function() {
-        test.assertTitle('Foros | AbbVie');
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum');
-    });
-
-    casper.then(function(){
         casper.click('a[href="/es/forum/1611"]');
-        this.echo('CLicked in AULAS');
+        this.echo('CLicked in Aulas');
     });
 
     casper.wait(500, function() {});
@@ -43,7 +30,7 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
 
     casper.then(function(){
         casper.click('a[href="/es/forum/1621"]');
-        this.echo('Clicked in GESTION SANITARIA');
+        this.echo('Clicked in Gestion sanitaria');
     });
 
     casper.wait(500, function() {});
@@ -52,6 +39,21 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
         test.assertTitle('Gestión Sanitaria | AbbVie');
         test.assertHttpStatus(200);
         test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum/1621');
+    });
+
+    casper.back();
+
+    casper.then(function(){
+        casper.click('a[href="/es/forum/1632"]');
+        this.echo('Clicked in Ventas');
+    });
+
+    casper.wait(500, function() {});
+
+    casper.then(function() {
+        test.assertTitle('Ventas | AbbVie');
+        test.assertHttpStatus(200);
+        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum/1632');
     });
 
     casper.then(function() {

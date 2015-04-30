@@ -21,7 +21,7 @@ casper.test.begin('Campus Abbvie - Test9 - Aulas', 44, function suite(test) {
 
   casper.then(function() {
     casper.click('a[href="/es/studyrooms/abbvie-care"]');
-    this.echo('Clicked in Abbvie-care');
+    this.echo('Clicked in Abbvie care');
   });
 
   casper.then(function() {
@@ -117,7 +117,7 @@ casper.test.begin('Campus Abbvie - Test9 - Aulas', 44, function suite(test) {
 
   casper.then(function() {
     casper.click('a[href="/es/studyrooms/on-boarding"]');
-    this.echo('Clicked in On Boarding');
+    this.echo('Clicked in On boarding');
   });
 
   casper.then(function() {
