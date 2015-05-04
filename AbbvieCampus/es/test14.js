@@ -2,19 +2,19 @@ var userName = ****;
 var password = ****;
 
 var menueditor_add = ["/es/admin/people/create",
-					            "/es/admin/structure/taxonomy/wiki_terms/add",
-					            "/es/node/add/blog-article",
+					  "/es/admin/structure/taxonomy/wiki_terms/add",
+					  "/es/node/add/blog-article",
                       "/es/node/add/classroom",
-					            "/es/node/add/contact",
-					            "/es/node/add/course",
+					  "/es/node/add/contact",
+					  "/es/node/add/course",
                       "/es/node/add/digital-certification",
-					            "/es/node/add/faqs",
+					  "/es/node/add/faqs",
                       "/es/node/add/help",
-					            "/es/node/add/help-video",
-					            "/es/node/add/link",
-					            "/es/node/add/news",
-					            "/es/node/add/schedule-course",
-					            "/es/node/add/plan-de-formaci-n-anual"];
+					  "/es/node/add/help-video",
+					  "/es/node/add/link",
+					  "/es/node/add/news",
+					  "/es/node/add/schedule-course",
+					  "/es/node/add/plan-de-formaci-n-anual"];
 
 var menueditor_statistics = ["/es/comment-stats",
                              "/es/user-points",

@@ -232,8 +232,8 @@ casper.test.begin('Campus Abbvie - Test1 - Control Menu de Pagina Principal', 42
   });
 
   casper.then(function() {
-    casper.click('a[href="/uk/"]');
-    this.echo('Clicked in Home');
+    casper.click('a[href="/es/"]');
+    this.echo('Clicked in Inicio');
   });
 
   casper.wait(500, function() {});
@@ -241,7 +241,7 @@ casper.test.begin('Campus Abbvie - Test1 - Control Menu de Pagina Principal', 42
   casper.then(function() {
     test.assertTitle('AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/faqs');
+    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/');
   });
 
   casper.then(function() {
