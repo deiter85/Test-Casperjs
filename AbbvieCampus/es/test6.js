@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Programa de Puntos/Canjear Puntos', 21, function suite(test) {   
+casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Programa de Puntos/Canjear Puntos', 20, function suite(test) {   
 	
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -16,7 +16,7 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click('a[href="/es/point-program"]');
+        casper.click('a[href="/es/point-program"][class=sf-depth-2]');
         this.echo('Clicked in Programa de puntos/Informacion');
     });
 
@@ -43,7 +43,7 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
 
     casper.then(function() {
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/redeem-your-user-points');
+        test.assertUrlMatch('https://abbviecampus.com/es/redeem-your-user-points');
     });
 
     casper.then(function(){
@@ -87,7 +87,7 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
     casper.then(function() {
         test.assertTitle('Tramitar compra | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/checkout/1');
+        test.assertUrlMatch('https://abbviecampus.com/es/checkout/1');
     });
 
     casper.then(function() {
@@ -115,9 +115,9 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
 
     casper.then(function() {
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/');
+        test.assertUrlMatch('https://abbviecampus.com/es/');
     });
-
+    
     casper.then(function() {
         casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');

@@ -4,7 +4,7 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test8 - Ayuda y Noticias', 9, function suite(test) {   
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -64,7 +64,7 @@ casper.test.begin('Campus Abbvie - Test8 - Ayuda y Noticias', 9, function suite(
     casper.then(function() {
         test.assertExists(x('//div[@class="view-footer"]'), 'Find an element matching: LISTA AREA NEWS');
     });
-
+    
     casper.then(function() {
         casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');

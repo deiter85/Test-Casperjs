@@ -2,19 +2,19 @@ var userName = ****;
 var password = ****;
 
 var menueditor_add = ["/es/admin/people/create",
-					  "/es/admin/structure/taxonomy/wiki_terms/add",
-					  "/es/node/add/blog-article",
+					            "/es/admin/structure/taxonomy/wiki_terms/add",
+					            "/es/node/add/blog-article",
                       "/es/node/add/classroom",
-					  "/es/node/add/contact",
-					  "/es/node/add/course",
+					            "/es/node/add/contact",
+					            "/es/node/add/course",
                       "/es/node/add/digital-certification",
-					  "/es/node/add/faqs",
+					            "/es/node/add/faqs",
                       "/es/node/add/help",
-					  "/es/node/add/help-video",
-					  "/es/node/add/link",
-					  "/es/node/add/news",
-					  "/es/node/add/schedule-course",
-					  "/es/node/add/plan-de-formaci-n-anual"];
+					            "/es/node/add/help-video",
+					            "/es/node/add/link",
+					            "/es/node/add/news",
+					            "/es/node/add/schedule-course",
+					            "/es/node/add/plan-de-formaci-n-anual"];
 
 var menueditor_statistics = ["/es/comment-stats",
                              "/es/user-points",
@@ -29,12 +29,12 @@ var menueditor_admin = ["/es/admin/structure/entity-type/user_awards/user_awards
                         "/es/admin-help/help",
                         "/es/admin/content/comment",
                         "/es/admin-courses",
-                        "/es/admin-link",
+                        //"/es/admin-link",
                         "/es/admin-formacion-anual",
-                        "/es/admin/schedule-courses",
+                        //"/es/admin/schedule-courses",
                         "/es/admin-news",
                         "/es/wiki",
-                        "/es/wiki/edit-terms",
+                        //"/es/wiki/edit-terms",
                         "/es/admin/commerce/orders",
                         "/es/admin/store-product",
                         "/es/admin-tags"]; //Falta enlace a Blog entries
@@ -51,20 +51,16 @@ var menueditor_users = ["/es/admin/config/system/flood-unblock",
 
 casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function suite(test) {   
   
-  casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
-    
+  casper.start('https://abbviecampus.com/es/user', function() {
     this.echo('⌚ Logging in....');
-    
     this.fill('form#user-login', {
-        
-        'name': userName,
-        'pass': password
-    
+      'name': userName,
+      'pass': password
     }, true);
-    
     this.echo('Homepage was loaded successfully.');
-  
   });
+
+  casper.wait(500, function() {});
 
   casper.then(function() {
   
@@ -76,8 +72,8 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
 
   casper.then(function() {
       
-      casper.click('a[href="/es/node/add"]');
-      this.echo('Clicked in Agregar contenido');
+    casper.click('a[href="/es/node/add"]');
+    this.echo('Clicked in Agregar contenido');
   
   });
 
@@ -86,7 +82,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   casper.then(function() {
     
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/node/add');
+    test.assertUrlMatch('https://abbviecampus.com/es/node/add');
     
   });
 
@@ -106,7 +102,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
     casper.then(function() {
     
       test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_add[indice++]);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_add[indice++]);
     
     });
   
@@ -132,7 +128,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   casper.then(function() {
     
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/admin-blog-entries');
+    test.assertUrlMatch('https://abbviecampus.com/es/admin-blog-entries');
     
   });
 
@@ -156,7 +152,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   casper.then(function() {
     
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/statistics');
+    test.assertUrlMatch('https://abbviecampus.com/es/statistics');
     
   });
 
@@ -176,7 +172,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
     casper.then(function() {
     
       test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_statistics[indice2++]);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_statistics[indice2++]);
     
     });
 
@@ -202,7 +198,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   casper.then(function() {
     
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/admin-courses');
+    test.assertUrlMatch('https://abbviecampus.com/es/admin-courses');
     
   });
 
@@ -222,7 +218,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
     casper.then(function() {
     
       test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_admin[indice3++]);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_admin[indice3++]);
     
     });
   
@@ -262,7 +258,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
 
       if (indice4 != 1) {
       
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_users[indice4]);
+        test.assertUrlMatch('https://abbviecampus.com' + menueditor_users[indice4]);
       
       }
 
@@ -282,7 +278,7 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
 
   casper.then(function() {
       
-      casper.click('a[href="/es/admin/config/system/flood-unblock"]');
+    casper.click('a[href="/es/admin/config/system/flood-unblock"]');
   
   })
 

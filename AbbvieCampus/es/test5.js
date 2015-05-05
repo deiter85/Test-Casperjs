@@ -4,7 +4,7 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test5 - Itinerarios Formativos y Mi Formacion', 18, function suite(test) {   
 	
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -109,7 +109,7 @@ casper.test.begin('Campus Abbvie - Test5 - Itinerarios Formativos y Mi Formacion
     casper.then(function() {
         test.assertExists(x('//*[@class="views-table cols-3"]'), 'Find an element matching: TABLA CUADRO COMPLETADOS');
     });
-
+    
     casper.then(function() {
         casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');

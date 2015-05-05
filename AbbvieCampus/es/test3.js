@@ -4,16 +4,16 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test3 - Pagina Principal', 13, function suite(test) {   
 	
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
-            this.fill('form#user-login', {
+        this.fill('form#user-login', {
             'name': userName,
             'pass': password
         }, true);
         this.echo('Homepage was loaded successfully.');
     });
 
-    casper.wait(500, function() {});  
+    casper.wait(500, function() {}); 
 
     casper.then(function() {
    	    test.assertExists(x('//*[@id="block-views-view-news-block-1"]'), 'Find an element matching: CUADRO NOTICIAS');
@@ -66,11 +66,11 @@ casper.test.begin('Campus Abbvie - Test3 - Pagina Principal', 13, function suite
     casper.then(function(){
         test.assertExists(x('//*[@id="footer"]'), 'Find an element matching: FOOTER');
     });
-
+    
     casper.then(function() {
         casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');
-    });;
+    });
   	
     casper.run(function() {
    		test.done(); 

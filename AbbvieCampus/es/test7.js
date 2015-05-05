@@ -4,7 +4,7 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test7 - Formacion Anual y FAQs',5, function suite(test) {   
 	
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -48,7 +48,7 @@ casper.test.begin('Campus Abbvie - Test7 - Formacion Anual y FAQs',5, function s
     casper.then(function() {
         test.assertExists(x('//*[@class="view-content ui-accordion ui-widget ui-helper-reset"]'), 'Find an element matching: LISTA PREGUNTAS FRECUENTES');
     });
-
+   
     casper.then(function() {
         casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');

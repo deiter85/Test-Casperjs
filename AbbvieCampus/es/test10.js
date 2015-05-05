@@ -4,7 +4,7 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test10 - Mis puntos, Mi cuenta y Sugerencias' , 11, function suite(test) {   
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -16,7 +16,7 @@ casper.test.begin('Campus Abbvie - Test10 - Mis puntos, Mi cuenta y Sugerencias'
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click('a[href="https://abbvie-wec.dev.aspgems.com/es/userpoints-view"]');
+        casper.click('a[href="https://abbviecampus.com/es/userpoints-view"]');
         this.echo('Clicked in Mis puntos');
     });
 
@@ -35,7 +35,7 @@ casper.test.begin('Campus Abbvie - Test10 - Mis puntos, Mi cuenta y Sugerencias'
     });
 
     casper.then(function(){
-        casper.click('a[href="https://abbvie-wec.dev.aspgems.com/es/user"]');
+        casper.click('a[href="https://abbviecampus.com/es/user"]');
         this.echo('Clicked in Mi cuenta');
     });
 
@@ -98,7 +98,7 @@ casper.test.begin('Campus Abbvie - Test10 - Mis puntos, Mi cuenta y Sugerencias'
     casper.then(function() {
         test.assertExists(x('//*[@id="suggestions-entityform-edit-form"]'), 'Find an element matching: FORMULARIO');
     });
-
+    
     casper.then(function() {
         casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');

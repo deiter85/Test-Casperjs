@@ -4,7 +4,7 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {   
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -25,7 +25,7 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
     casper.then(function() {
         test.assertTitle('Aulas | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum/1611');
+        test.assertUrlMatch('https://abbviecampus.com/es/forum/1611');
     });
 
     casper.then(function(){
@@ -38,7 +38,7 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
     casper.then(function() {
         test.assertTitle('Gestión Sanitaria | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum/1621');
+        test.assertUrlMatch('https://abbviecampus.com/es/forum/1621');
     });
 
     casper.back();
@@ -53,7 +53,7 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
     casper.then(function() {
         test.assertTitle('Ventas | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/es/forum/1632');
+        test.assertUrlMatch('https://abbviecampus.com/es/forum/1632');
     });
 
     casper.then(function() {

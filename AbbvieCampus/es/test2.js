@@ -4,7 +4,7 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test2 - Catalogo y Aula', 8, function suite(test) {
 
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -58,7 +58,7 @@ casper.test.begin('Campus Abbvie - Test2 - Catalogo y Aula', 8, function suite(t
     casper.then(function() {
         test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: LISTA DE AULAS');
     });
-
+    
     casper.then(function() {
         casper.click('a[href="/es/user/logout"]');
         this.echo('⌚ Log out....');

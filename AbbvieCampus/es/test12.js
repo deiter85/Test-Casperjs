@@ -4,7 +4,7 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie - Test12 - Busqueda', 6, function suite(test) {   
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/es/user', function() {
+    casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -22,8 +22,6 @@ casper.test.begin('Campus Abbvie - Test12 - Busqueda', 6, function suite(test) {
         }, true);
         this.echo('Page was loaded successfully.');
     });
-
-    casper.wait(500, function() {});
 
     casper.wait(500, function() {});
 
