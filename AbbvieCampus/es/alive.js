@@ -1,8 +1,8 @@
 casper.test.begin('Campus Abbvie - User', 4, function suite(test){
   
-  casper.start('https://abbviecampus.com/es/user', function() {});
-
-  casper.wait(500, function() {});
+  casper.start('https://abbviecampus.com/es/user', function() {
+    test.assertHttpStatus(200, 'Homepage was loaded successfully.');
+  });
   
   casper.then(function(){
     test.assertExists('form#user-login', 'Login form is present.');
