@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test2 - Catalogo y Aula', 8, function suite(test) {
+casper.test.begin('Campus Abbvie ES - Test2 - Catalogo y Aula', 8, function suite(test) {
 
     casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -19,8 +19,6 @@ casper.test.begin('Campus Abbvie - Test2 - Catalogo y Aula', 8, function suite(t
         casper.click('a[href="/es/catalogue"]');
         this.echo('Clicked in Catalogo');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');

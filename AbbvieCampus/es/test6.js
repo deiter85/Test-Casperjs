@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Programa de Puntos/Canjear Puntos', 20, function suite(test) {   
+casper.test.begin('Campus Abbvie ES - Test6 - Programa de Puntos/Informacion y Programa de Puntos/Canjear Puntos', 20, function suite(test) {   
 	
     casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -19,8 +19,6 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
         casper.click('a[href="/es/point-program"][class=sf-depth-2]');
         this.echo('Clicked in Programa de puntos/Informacion');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -39,8 +37,6 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
         this.echo('Clicked in Redeem your user points en Programa de puntos/Informacion');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertHttpStatus(200);
         test.assertUrlMatch('https://abbviecampus.com/es/redeem-your-user-points');
@@ -50,8 +46,6 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
         casper.click('a[href="/es/redeem-your-user-points"]');
         this.echo('Clicked in Programa de puntos/Canjear puntos');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -82,7 +76,7 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
         this.echo('Clicked in Canjear');
     });
 
-    casper.wait(500, function() {});
+    casper.wait(50, function() {});
 
     casper.then(function() {
         test.assertTitle('Tramitar compra | AbbVie');
@@ -110,8 +104,6 @@ casper.test.begin('Campus Abbvie - Test6 - Programa de Puntos/Informacion y Prog
         casper.click('input[type="submit"][id="edit-cancel"]');
         this.echo('Clicked in Cancelar');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertHttpStatus(200);

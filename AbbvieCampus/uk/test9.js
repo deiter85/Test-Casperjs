@@ -1,9 +1,9 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test) {
+casper.test.begin('Campus Abbvie UK - Test9 - Studyrooms', 50, function suite(test) {
 
-  casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+  casper.start('https://abbviecampus.com/uk/user', function() {
     this.echo('⌚ Logging in....');
     this.fill('form#user-login', {
       	'name': userName,
@@ -26,7 +26,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/abbvie-academy/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/abbvie-academy/home');
   });
 
   casper.back();
@@ -38,7 +38,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/abbvie-way/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/abbvie-way/home');
   });
 
   casper.back();
@@ -50,7 +50,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/abpi-and-pv/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/abpi-and-pv/home');
   });
 
   casper.back();
@@ -62,7 +62,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/biotherapeutics/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/biotherapeutics/home');
   });
 
   casper.back();
@@ -74,7 +74,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/brand-planning/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/brand-planning/home');
   });
 
   casper.back();
@@ -86,7 +86,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/business-skills/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/business-skills/home');
   });
 
   casper.back();
@@ -98,7 +98,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/closed-loop-model-clm/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/closed-loop-model-clm/home');
   });
 
   casper.back();
@@ -110,7 +110,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/coaching/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/coaching/home');
   });
 
   casper.back();
@@ -122,7 +122,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/hr/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/hr/home');
   });
 
   casper.back();
@@ -134,7 +134,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/impact-scheme/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/impact-scheme/home');
   });
 
   casper.back();
@@ -146,7 +146,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/in-field-working/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/in-field-working/home');
   });
 
   casper.back();
@@ -158,7 +158,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/influencing-and-persuading/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/influencing-and-persuading/home');
   });
 
   casper.back();
@@ -170,7 +170,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/innovation/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/innovation/home');
   });
 
   casper.back();
@@ -182,7 +182,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/insights-discovery/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/insights-discovery/home');
   });
 
   casper.back();
@@ -194,7 +194,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/leadership/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/leadership/home');
   });
 
   casper.back();
@@ -206,7 +206,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/lynda-com-and-external-experts/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/lynda-com-and-external-experts/home');
   });
 
   casper.back();
@@ -218,7 +218,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/marketing-excellence/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/marketing-excellence/home');
   });
 
   casper.back();
@@ -230,7 +230,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/medical-and-clinical/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/medical-and-clinical/home');
   });
 
   casper.back();
@@ -242,7 +242,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/mentoring/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/mentoring/home');
   });
 
   casper.back();
@@ -254,7 +254,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/patients-at-heart/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/patients-at-heart/home');
   });
 
   casper.back();
@@ -266,7 +266,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/personal-development/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/personal-development/home');
   });
 
   casper.back();
@@ -278,7 +278,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/product-knowledge/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/product-knowledge/home');
   });
 
   casper.back();
@@ -290,7 +290,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/systems-and-finance/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/systems-and-finance/home');
   });
 
   casper.back();
@@ -302,7 +302,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/veeva-customer-relationship-management/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/veeva-customer-relationship-management/home');
   });
 
   casper.back();
@@ -314,7 +314,7 @@ casper.test.begin('Campus Abbvie - Test9 - Studyrooms', 50, function suite(test)
 
   casper.then(function() {
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/studyrooms/zinc/home');
+    test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/zinc/home');
   });
 
   casper.then(function() {

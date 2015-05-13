@@ -2,25 +2,34 @@ var userName = ****;
 var password = ****;
 
 var menueditor_add = ["/es/admin/people/create",
-					            "/es/admin/structure/taxonomy/wiki_terms/add",
-					            "/es/node/add/blog-article",
+                      "/es/admin/structure/taxonomy/wiki_terms/add",
+                      "/es/node/add/blog-article",
                       "/es/node/add/classroom",
-					            "/es/node/add/contact",
-					            "/es/node/add/course",
+                      "/es/node/add/contact",
+                      "/es/node/add/course",
                       "/es/node/add/digital-certification",
-					            "/es/node/add/faqs",
+                      "/es/node/add/faqs",
                       "/es/node/add/help",
-					            "/es/node/add/help-video",
-					            "/es/node/add/link",
-					            "/es/node/add/news",
-					            "/es/node/add/schedule-course",
-					            "/es/node/add/plan-de-formaci-n-anual"];
+                      "/es/node/add/help-video",
+                      "/es/node/add/link",
+                      "/es/node/add/news",
+                      "/es/node/add/schedule-course",
+                      "/es/node/add/plan-de-formaci-n-anual"];
 
 var menueditor_statistics = ["/es/comment-stats",
+                             "/es/stats/expert_corner/content_creation",
+                             "/es/forum-stats",
+                             "/es/admin/structure/entityform_types/manage/your_opinion/submissions/autofields_table",
                              "/es/user-points",
                              "/es/awards/list",
                              "/es/awards",
-                             "/es/admin/config/people/userpoints"]; //Falta enlace a User with/without picture
+                             "/es/admin/config/people/userpoints",
+                             "/es/stats/people-no-picture",
+                             "/es/admin/valorated-courses-by-student",
+                             "/es/admin/stats/comment-stats-by-user-total",
+                             "/es/admin/stats/comment-stats-by-user",
+                             "/es/admin/stats/blog-stats-by-user",
+                             "/es/admin/bloggers-stats"];
 
 var menueditor_admin = ["/es/admin/structure/entity-type/user_awards/user_awards",
                         "/es/admin-faq",
@@ -28,16 +37,19 @@ var menueditor_admin = ["/es/admin/structure/entity-type/user_awards/user_awards
                         "/es/admin-classrooms",
                         "/es/admin-help/help",
                         "/es/admin/content/comment",
+                        //"/es/admin-contacts",
                         "/es/admin-courses",
                         //"/es/admin-link",
+                        "/es/admin-blog-entries",
                         "/es/admin-formacion-anual",
-                        //"/es/admin/schedule-courses",
+                        "/es/admin/schedule-courses",
                         "/es/admin-news",
                         "/es/wiki",
-                        //"/es/wiki/edit-terms",
+                        //"/es/wiki/edit-terms",          Pagina no encontrada
+                        "/es/admin/admin-course-request",
                         "/es/admin/commerce/orders",
                         "/es/admin/store-product",
-                        "/es/admin-tags"]; //Falta enlace a Blog entries
+                        "/es/admin-tags"];
 
 var menueditor_users = ["/es/admin/config/system/flood-unblock",
                         "/es/export-all-users",
@@ -49,13 +61,13 @@ var menueditor_users = ["/es/admin/config/system/flood-unblock",
                         "/es/usuarios-suscritos-a-novedades",
                         "/es/admin/users"];
 
-casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function suite(test) {   
+casper.test.begin('Campus Abbvie ES - Test14 - Control Menu de Editor', 0, function suite(test) {   
   
   casper.start('https://abbviecampus.com/es/user', function() {
     this.echo('⌚ Logging in....');
     this.fill('form#user-login', {
-      'name': userName,
-      'pass': password
+        'name': userName,
+        'pass': password
     }, true);
     this.echo('Homepage was loaded successfully.');
   });
@@ -77,8 +89,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     
     test.assertHttpStatus(200);
@@ -97,8 +107,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
     
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
     
       test.assertHttpStatus(200);
@@ -107,30 +115,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
     });
   
   }
-
-  casper.then(function() {
-  
-    this.echo(' ');
-    this.echo('---***___BLOG ENTRIES___***---');
-    this.echo(' ');
-  
-  });
-
-  casper.then(function() {
-  
-    casper.click('a[href="/es/admin-blog-entries"]');
-    this.echo('Clicked in Blog entries');
-  
-  });
-
-  casper.wait(500, function() {});
-
-  casper.then(function() {
-    
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbviecampus.com/es/admin-blog-entries');
-    
-  });
 
   casper.then(function() {
   
@@ -146,8 +130,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
     this.echo('Clicked in Estadisticas');
   
   });
-
-  casper.wait(500, function() {});
 
   casper.then(function() {
     
@@ -166,8 +148,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
       this.echo('Clicked in ' + menueditor_statistics[indice2]);
   
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
     
@@ -193,8 +173,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     
     test.assertHttpStatus(200);
@@ -213,8 +191,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
     
       test.assertHttpStatus(200);
@@ -232,13 +208,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   
   });
 
-  /*casper.then(function() {
-      
-      casper.click('a[href="/es/admin.courses"]');   FALTA ENLACE A USERS
-      this.echo('Clicked in Agregar contenido');
-  
-  });*/
-
   var indice4 = 0;
 
   for (i = 0; i < menueditor_users.length; i++) {     
@@ -249,8 +218,6 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
       this.echo('Clicked in ' + menueditor_users[indice4] );
   
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
     
@@ -282,11 +249,9 @@ casper.test.begin('Campus Abbvie - Test14 - Control Menu de Editor', 0, function
   
   })
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     
-  	test.assertElementCount('li', 55);  
+    test.assertElementCount('li', 62);  
     
   });
   

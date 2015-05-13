@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {   
+casper.test.begin('Campus Abbvie ES - Test13 - Foro', 9, function suite(test) {
     
     casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -20,8 +20,6 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
         this.echo('CLicked in Aulas');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertTitle('Aulas | AbbVie');
         test.assertHttpStatus(200);
@@ -32,8 +30,6 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
         casper.click('a[href="/es/forum/1621"]');
         this.echo('Clicked in Gestion sanitaria');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertTitle('Gestión Sanitaria | AbbVie');
@@ -47,8 +43,6 @@ casper.test.begin('Campus Abbvie - Test13 - Foro', 9, function suite(test) {
         casper.click('a[href="/es/forum/1632"]');
         this.echo('Clicked in Ventas');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertTitle('Ventas | AbbVie');

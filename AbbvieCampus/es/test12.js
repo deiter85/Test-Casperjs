@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test12 - Busqueda', 6, function suite(test) {   
+casper.test.begin('Campus Abbvie ES - Test12 - Busqueda', 6, function suite(test) {   
     
     casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -23,7 +23,7 @@ casper.test.begin('Campus Abbvie - Test12 - Busqueda', 6, function suite(test) {
         this.echo('Page was loaded successfully.');
     });
 
-    casper.wait(500, function() {});
+    casper.wait(50, function() {});
 
     casper.then(function() {
         test.assertTitle('Buscar | AbbVie');

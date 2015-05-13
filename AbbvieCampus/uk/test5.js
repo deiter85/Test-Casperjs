@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test5 - My training', 9, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test5 - My training', 9, function suite(test) {   
 	
-    casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+    casper.start('https://abbviecampus.com/uk/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -19,8 +19,6 @@ casper.test.begin('Campus Abbvie - Test5 - My training', 9, function suite(test)
         casper.click('a[href="/uk/my-training"]');
         this.echo('Clicked in My training');
     });
-
-    casper.wait(1000, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');

@@ -2,25 +2,30 @@ var userName = ****;
 var password = ****;
 
 var menueditor_add = ["/uk/admin/people/create",
-					            "/uk/admin/structure/taxonomy/wiki_terms/add",
-					            "/uk/node/add/blog-article",
+                      "/uk/admin/structure/taxonomy/wiki_terms/add",
+                      "/uk/node/add/blog-article",
                       "/uk/node/add/classroom",
-					            "/uk/node/add/contact",
-					            "/uk/node/add/course",
+                      "/uk/node/add/contact",
+                      "/uk/node/add/course",
                       "/uk/node/add/digital-certification",
-					            "/uk/node/add/faqs",
+                      "/uk/node/add/faqs",
                       "/uk/node/add/help",
-					            "/uk/node/add/help-video",
-					            "/uk/node/add/link",
-					            "/uk/node/add/news",
-					            "/uk/node/add/schedule-course",
-					            "/uk/node/add/plan-de-formaci-n-anual"];
+                      "/uk/node/add/help-video",
+                      "/uk/node/add/link",
+                      "/uk/node/add/news",
+                      "/uk/node/add/schedule-course",
+                      "/uk/node/add/plan-de-formaci-n-anual"];
 
 var menueditor_statistics = ["/uk/comment-stats",
+                             "/uk/stats/expert_corner/content_creation",
+                             "/uk/forum-stats",
+                             "/uk/admin/structure/entityform_types/manage/your_opinion/submissions/autofields_table",
                              "/uk/user-points",
                              "/uk/awards/list",
                              "/uk/awards",
-                             "/uk/admin/config/people/userpoints"]; 
+                             "/uk/admin/config/people/userpoints",
+                             "/uk/stats/people-no-picture",
+                             "/uk/admin/bloggers-stats"];
 
 var menueditor_admin = ["/uk/admin/structure/entity-type/user_awards/user_awards",
                         "/uk/admin-faq",
@@ -31,9 +36,11 @@ var menueditor_admin = ["/uk/admin/structure/entity-type/user_awards/user_awards
                         "/uk/admin-contacts",
                         "/uk/admin-courses",
                         "/uk/admin-link",
+                        "/uk/admin-blog-entries",
                         "/uk/admin-formacion-anual",
                         "/uk/admin/schedule-courses",
                         "/uk/admin-news",
+                        "/uk/admin/admin-course-request",
                         "/uk/wiki",
                         "/uk/wiki/edit-terms",
                         "/uk/admin/commerce/orders",
@@ -52,9 +59,9 @@ var menueditor_users = ["/uk/admin/config/system/flood-unblock",
 
 var indice = 0;
 
-casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, function suite(test) {   
   
-  casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+  casper.start('https://abbviecampus.com/uk/user', function() {
     
     this.echo('⌚ Logging in....');
     
@@ -84,12 +91,10 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
   
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/node/add');
+    test.assertUrlMatch('https://abbviecampus.com/uk/node/add');
     
   });
   
@@ -102,40 +107,20 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
     
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
     
       test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_add[indice++]);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_add[indice]);
+    
+    });
+
+    casper.then(function() {
+    
+      indice++;
     
     });
   
   }
-
-  casper.then(function() {
-  
-    this.echo(' ');
-    this.echo('---***___BLOG ENTRIES___***---');
-    this.echo(' ');
-  
-  });
-
-  casper.then(function() {
-  
-    casper.click('a[href="/uk/admin-blog-entries"]');
-    this.echo('Clicked in Blog entries');
-  
-  });
-
-  casper.wait(500, function() {});
-
-  casper.then(function() {
-    
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/admin-blog-entries');
-    
-  });
 
   casper.then(function() {
   
@@ -152,12 +137,10 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
   
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/statistics');
+    test.assertUrlMatch('https://abbviecampus.com/uk/statistics');
     
   });
 
@@ -172,12 +155,16 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
   
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
     
       test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_statistics[indice2++]);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_statistics[indice2]);
+    
+    });
+
+    casper.then(function() {
+    
+      indice2++;
     
     });
 
@@ -198,12 +185,10 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
   
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/admin-courses');
+    test.assertUrlMatch('https://abbviecampus.com/uk/admin-courses');
     
   });
 
@@ -218,12 +203,16 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
   
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
     
       test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_admin[indice3++]);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_admin[indice3]);
+    
+    });
+
+    casper.then(function() {
+    
+      indice3++;
     
     });
   
@@ -248,21 +237,21 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
   
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
     
       test.assertHttpStatus(200);
 
       if (indice4 != 1) {
       
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com' + menueditor_users[indice4++]);
+        test.assertUrlMatch('https://abbviecampus.com' + menueditor_users[indice4]);
       
-      } else {
-
-        indice4++;
-
       }
+    
+    });
+
+    casper.then(function() {
+    
+      indice4++;
     
     });
   
@@ -282,11 +271,9 @@ casper.test.begin('Campus Abbvie - Test14 - Menu Control of Editor', 0, function
   
   })
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     
-    test.assertElementCount('li', 55);  
+    test.assertElementCount('li', 56);  
     
   });
   

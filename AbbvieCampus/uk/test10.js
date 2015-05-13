@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test10 - My points, my account and suggestions', 14, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test10 - My points, my account and suggestions', 14, function suite(test) {   
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+    casper.start('https://abbviecampus.com/uk/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -16,11 +16,9 @@ casper.test.begin('Campus Abbvie - Test10 - My points, my account and suggestion
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click('a[href="https://abbvie-wec.dev.aspgems.com/uk/userpoints-view"]');
+        casper.click('a[href="https://abbviecampus.com/uk/userpoints-view"]');
         this.echo('Clicked in My points');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertTitle('User Points | AbbVie');
@@ -35,11 +33,9 @@ casper.test.begin('Campus Abbvie - Test10 - My points, my account and suggestion
     });
 
     casper.then(function(){
-        casper.click('a[href="https://abbvie-wec.dev.aspgems.com/uk/user"]');
+        casper.click('a[href="https://abbviecampus.com/uk/user"]');
         this.echo('Clicked in My account');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertTitle('uk_editor | AbbVie');
@@ -62,8 +58,6 @@ casper.test.begin('Campus Abbvie - Test10 - My points, my account and suggestion
         this.echo('Clicked in View points transactions');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertTitle('Points for uk_editor | AbbVie');
     });
@@ -84,8 +78,6 @@ casper.test.begin('Campus Abbvie - Test10 - My points, my account and suggestion
         casper.click('a[href="/uk/suggestions"]');
         this.echo('Clicked in Suggestions');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');

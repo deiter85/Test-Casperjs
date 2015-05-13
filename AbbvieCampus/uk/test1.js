@@ -1,9 +1,9 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function suite(test) {
+casper.test.begin('Campus Abbvie UK - Test1 - Menu Control Homepage', 51, function suite(test) {
 
-  casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+  casper.start('https://abbviecampus.com/uk/user', function() {
     this.echo('⌚ Logging in....');
     this.fill('form#user-login', {
       	'name': userName,
@@ -15,9 +15,9 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
   casper.wait(500, function() {});
 
   casper.then(function() {
-	  test.assertTitle('AbbVie');
+    test.assertTitle('AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk');
+    test.assertUrlMatch('https://abbviecampus.com/uk');
   });
 
   casper.then(function() {
@@ -25,12 +25,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Catalogue');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
-    //test.assertTitle('Catalogue of training activities | AbbVie');
+    test.assertTitle('Catalogue of courses | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/catalogue');
+    test.assertUrlMatch('https://abbviecampus.com/uk/catalogue');
   });
 
   casper.back();
@@ -40,12 +38,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Studyrooms');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Studyroom | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/list-of-classrooms');
+    test.assertUrlMatch('https://abbviecampus.com/uk/list-of-classrooms');
   });
 
   casper.back();
@@ -55,12 +51,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Forums');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Studyrooms | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/forum');
+    test.assertUrlMatch('https://abbviecampus.com/uk/forum');
   });
 
   casper.back();
@@ -70,12 +64,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in LYNDA:COM');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('lynda.com - free online training | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/course/lyndacom-free-online-training');
+    test.assertUrlMatch('https://abbviecampus.com/uk/course/lyndacom-free-online-training');
   });
 
   casper.back();
@@ -85,27 +77,23 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in My training');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
-    //test.assertTitle('My training | AbbVie');
+    test.assertTitle('My training | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/my-training');
+    test.assertUrlMatch('https://abbviecampus.com/uk/my-training');
   });
 
   casper.back();
 
   casper.then(function() {
-    casper.click('a[href="/uk/point-program"]');
+    casper.click('a[href="/uk/point-program"][class=sf-depth-2]');
     this.echo('Clicked in Rewards/Information');
   });
-
-  casper.wait(500, function() {});
 
   casper.then(function() {
     test.assertTitle('Point program | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/point-program');
+    test.assertUrlMatch('https://abbviecampus.com/uk/point-program');
   });
 
   casper.back();
@@ -115,12 +103,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Rewards/My points');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Redeem your userpoints | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/redeem-your-user-points');
+    test.assertUrlMatch('https://abbviecampus.com/uk/redeem-your-user-points');
   });
 
   casper.back();
@@ -133,12 +119,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Annual training');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Annual training | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/annual-training');
+    test.assertUrlMatch('https://abbviecampus.com/uk/annual-training');
   });
 
   casper.back();
@@ -148,12 +132,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in News');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('News | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/news');
+    test.assertUrlMatch('https://abbviecampus.com/uk/news');
   });
 
   casper.back();
@@ -163,12 +145,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Links');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Links | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/links');
+    test.assertUrlMatch('https://abbviecampus.com/uk/links');
   });
 
   casper.back();
@@ -178,12 +158,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Help');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Help | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/help');
+    test.assertUrlMatch('https://abbviecampus.com/uk/help');
   });
 
   casper.back();
@@ -193,12 +171,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Wiki');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Wiki terms | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/wiki');
+    test.assertUrlMatch('https://abbviecampus.com/uk/wiki');
   });
 
   casper.back();
@@ -208,12 +184,10 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in Contacts');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('Contacts | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/contacts');
+    test.assertUrlMatch('https://abbviecampus.com/uk/contacts');
   });
 
   casper.back();
@@ -223,40 +197,34 @@ casper.test.begin('Campus Abbvie - Test1 - Menu Control Homepage', 44, function 
     this.echo('Clicked in FAQS');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('FAQs | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/faqs');
+    test.assertUrlMatch('https://abbviecampus.com/uk/faqs');
   });
 
-  /*casper.back();
+  casper.back();
 
   casper.then(function() {
     casper.click('a[href="/uk/suggestions"]');
     this.echo('Clicked in Sugerencias');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('suggestions | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/suggestions');
-  });*/
+    test.assertUrlMatch('https://abbviecampus.com/uk/suggestions');
+  });
 
   casper.then(function() {
     casper.click('a[href="/uk/"]');
     this.echo('Clicked in Home');
   });
 
-  casper.wait(500, function() {});
-
   casper.then(function() {
     test.assertTitle('AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/');
+    test.assertUrlMatch('https://abbviecampus.com/uk/');
   });
 
   casper.then(function() {

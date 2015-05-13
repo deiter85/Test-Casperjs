@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test7 - Annual training, Contacts y FAQs', 8, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test7 - Annual training, Contacts y FAQs', 8, function suite(test) {    
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+    casper.start('https://abbviecampus.com/uk/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -20,8 +20,6 @@ casper.test.begin('Campus Abbvie - Test7 - Annual training, Contacts y FAQs', 8,
         this.echo('Clicked in Annual training');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');
     });
@@ -30,8 +28,6 @@ casper.test.begin('Campus Abbvie - Test7 - Annual training, Contacts y FAQs', 8,
         casper.click('a[href="/uk/contacts"]');
         this.echo('Clicked in Contacts');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');
@@ -53,8 +49,6 @@ casper.test.begin('Campus Abbvie - Test7 - Annual training, Contacts y FAQs', 8,
         casper.click('a[href="/uk/faqs"]');
         this.echo('Clicked in FAQs');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');

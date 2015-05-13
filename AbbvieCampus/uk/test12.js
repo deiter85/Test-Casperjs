@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test12 - Search', 6, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test12 - Search', 6, function suite(test) {   
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+    casper.start('https://abbviecampus.com/uk/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -23,9 +23,7 @@ casper.test.begin('Campus Abbvie - Test12 - Search', 6, function suite(test) {
         this.echo('Page was loaded successfully.');
     });
 
-    casper.wait(500, function() {});
-
-    casper.wait(500, function() {});
+    casper.wait(50, function() {});
 
     casper.then(function() {
         test.assertTitle('Search | AbbVie');

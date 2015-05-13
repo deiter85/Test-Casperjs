@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test13 - Forum', 9, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test13 - Forum', 9, function suite(test) {   
     
-    casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+    casper.start('https://abbviecampus.com/uk/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -20,12 +20,10 @@ casper.test.begin('Campus Abbvie - Test13 - Forum', 9, function suite(test) {
         this.echo('Clicked in Forums');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertTitle('Studyrooms | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/forum/400');
+        test.assertUrlMatch('https://abbviecampus.com/uk/forum/400');
     });
 
     casper.then(function(){
@@ -33,12 +31,10 @@ casper.test.begin('Campus Abbvie - Test13 - Forum', 9, function suite(test) {
         this.echo('CLicked in Veeva Customer Relationship Management');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertTitle('Veeva Customer Relationship Management | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/forum/421');
+        test.assertUrlMatch('https://abbviecampus.com/uk/forum/421');
     });
 
     casper.back();
@@ -48,12 +44,10 @@ casper.test.begin('Campus Abbvie - Test13 - Forum', 9, function suite(test) {
         this.echo('Clicked in Lynda com and External Experts');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertTitle('Lynda com and External Experts | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/forum/415');
+        test.assertUrlMatch('https://abbviecampus.com/uk/forum/415');
     });
 
     casper.then(function() {

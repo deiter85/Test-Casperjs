@@ -2,9 +2,9 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test6 - Rewards/Information and Rewards/My points', 21, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test6 - Rewards/Information and Rewards/My points', 20, function suite(test) {   
 	
-    casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function() {
+    casper.start('https://abbviecampus.com/uk/user', function() {
         this.echo('⌚ Logging in....');
         this.fill('form#user-login', {
             'name': userName,
@@ -16,11 +16,9 @@ casper.test.begin('Campus Abbvie - Test6 - Rewards/Information and Rewards/My po
     casper.wait(500, function() {});
 
     casper.then(function(){
-        casper.click('a[href="/uk/point-program"]');
+        casper.click('a[href="/uk/point-program"][class=sf-depth-2]');
         this.echo('Clicked in Rewards/Information');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');
@@ -39,19 +37,15 @@ casper.test.begin('Campus Abbvie - Test6 - Rewards/Information and Rewards/My po
         this.echo('Clicked in Redeem your user points from Rewards/Information');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/redeem-your-user-points');
+        test.assertUrlMatch('https://abbviecampus.com/uk/redeem-your-user-points');
     });
 
     casper.then(function(){
         casper.click('a[href="/uk/redeem-your-user-points"]');
         this.echo('Clicked in Rewards/My points');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITLE');
@@ -82,12 +76,12 @@ casper.test.begin('Campus Abbvie - Test6 - Rewards/Information and Rewards/My po
         this.echo('Clicked in Redeem');
     });
 
-    casper.wait(500, function() {});
+    casper.wait(50, function() {});
 
     casper.then(function() {
         test.assertTitle('Checkout | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/checkout/2');
+        test.assertUrlMatch('https://abbviecampus.com/uk/checkout/2');
     });
 
     casper.then(function() {
@@ -111,11 +105,9 @@ casper.test.begin('Campus Abbvie - Test6 - Rewards/Information and Rewards/My po
         this.echo('Clicked in Cancel');
     });
 
-    casper.wait(500, function() {});
-
     casper.then(function() {
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbvie-wec.dev.aspgems.com/uk/');
+        test.assertUrlMatch('https://abbviecampus.com/uk/');
     });
 
     casper.then(function() {

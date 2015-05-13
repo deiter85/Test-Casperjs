@@ -2,7 +2,7 @@ var x = require('casper').selectXPath;
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie - Test5 - Itinerarios Formativos y Mi Formacion', 18, function suite(test) {   
+casper.test.begin('Campus Abbvie ES - Test5 - Itinerarios Formativos y Mi Formacion', 18, function suite(test) {
 	
     casper.start('https://abbviecampus.com/es/user', function() {
         this.echo('⌚ Logging in....');
@@ -19,8 +19,6 @@ casper.test.begin('Campus Abbvie - Test5 - Itinerarios Formativos y Mi Formacion
         casper.click('a[href="/es/schedule-course-list"]');
         this.echo('Clicked in Itinerarios formativos');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
@@ -49,7 +47,7 @@ casper.test.begin('Campus Abbvie - Test5 - Itinerarios Formativos y Mi Formacion
         this.echo('Clicked in Mostrar itinerario');
     });
 
-    casper.wait(500, function() {});
+    casper.wait(50, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@class="percentages"]'), 'Find an element matching: CUADRO PORCENTAJE');
@@ -71,8 +69,6 @@ casper.test.begin('Campus Abbvie - Test5 - Itinerarios Formativos y Mi Formacion
         casper.click('a[href="/es/my-training"]');
         this.echo('Clicked in Mi formacion');
     });
-
-    casper.wait(500, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Find an element matching: TITULO');
