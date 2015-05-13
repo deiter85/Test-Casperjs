@@ -1,6 +1,6 @@
 casper.test.begin('Campus Abbvie - User', 4, function suite(test){
   
-  casper.start('https://abbvie-wec.dev.aspgems.com/uk/user', function(){
+  casper.start('https://abbviecampus.com/uk/user', function(){
     test.assertHttpStatus(200, 'Homepage was loaded successfully.');
   });
   
