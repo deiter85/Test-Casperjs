@@ -45,7 +45,7 @@ var menueditor_admin = ["/uk/admin/structure/entity-type/user_awards/user_awards
                         "/uk/wiki/edit-terms",
                         "/uk/admin/commerce/orders",
                         "/uk/admin/store-product",
-                        "/uk/admin-tags"]; 
+                        "/uk/admin-tags"];
 
 var menueditor_users = ["/uk/admin/config/system/flood-unblock",
                         "/uk/export-all-users",
@@ -59,7 +59,7 @@ var menueditor_users = ["/uk/admin/config/system/flood-unblock",
 
 var indice = 0;
 
-casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, function suite(test) {   
+casper.test.begin('Campus Abbvie UK - Test28 - Menu Control of Editor', 0, function suite(test) {
   
   casper.start('https://abbviecampus.com/uk/user', function() {
     
@@ -98,7 +98,7 @@ casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, funct
     
   });
   
-  for (i = 0; i < menueditor_add.length; i++) {     
+  for (i = 0; i < menueditor_add.length; i++) {
     
     casper.then(function() {
     
@@ -146,7 +146,7 @@ casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, funct
 
   var indice2 = 0;
 
-  for (i = 0; i < menueditor_statistics.length; i++) {     
+  for (i = 0; i < menueditor_statistics.length; i++) {
   
     casper.then(function() {
   
@@ -194,7 +194,7 @@ casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, funct
 
   var indice3=0;
 
-  for (i = 0; i < menueditor_admin.length; i++) {     
+  for (i = 0; i < menueditor_admin.length; i++) {
   
     casper.then(function() {
   
@@ -228,7 +228,7 @@ casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, funct
 
   var indice4=0;
 
-  for (i = 0; i < menueditor_users.length; i++) {     
+  for (i = 0; i < menueditor_users.length; i++) {
   
     casper.then(function() {
   
@@ -267,13 +267,13 @@ casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, funct
 
   casper.then(function() {
       
-      casper.click('a[href="/uk/admin/config/system/flood-unblock"]');
+    casper.click('a[href="/uk/admin/config/system/flood-unblock"]');
   
   })
 
   casper.then(function() {
     
-    test.assertElementCount('li', 56);  
+    test.assertElementCount('li', 57);
     
   });
   
@@ -286,7 +286,7 @@ casper.test.begin('Campus Abbvie UK - Test14 - Menu Control of Editor', 0, funct
   
   casper.run(function() {
   
-  	test.done();
+    test.done();
   
   });
 
