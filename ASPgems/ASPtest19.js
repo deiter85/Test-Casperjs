@@ -1,7 +1,8 @@
 var x = require('casper').selectXPath;
 
 casper.test.begin('Comprobar pagina ASPgems - Test19 - Presupuesto-Red Social', 8, function suite(test) {   
-  	casper.start('https://aspgems.com/', function() {
+  	casper.start();
+    casper.thenOpen('/', function() {
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {

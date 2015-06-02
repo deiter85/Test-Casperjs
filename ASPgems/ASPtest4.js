@@ -1,7 +1,8 @@
 var x = require('casper').selectXPath;
 
 casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 20, function suite(test) {    
-    casper.start('https://aspgems.com/', function() {
+    casper.start();
+    casper.thenOpen('/', function() {
         test.assertExists('.twitter-icon', 'Se encuentra el icono de twitter'); //comprueba si esta el icono de twitter
     });
     casper.then(function(){
@@ -17,19 +18,19 @@ casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 20, fun
         test.assertExists('.mosca', 'Se encuentra volver arriba'); //comprueba volver arriba
     });
     casper.then(function(){
-        test.assertExists(x('//h2[@class="block-title"]'), 'Se encuentra que hacemos...'); //comprobar que hacemos..
+        test.assertExists(x('//*[@id="block-block-40"]/div/div[@class="block-content content"]/h1'), 'Se encuentra que hacemos...'); //comprobar que hacemos..
     });
     casper.then(function(){
-        test.assertExists(x('//article[@id="block-views-what-we-do-block"]/div/div[@class="view-header"]'), 'Se encuentra subtitulo de que hacemos...'); //comprobar subtitulos que hacemos...
+        test.assertExists(x('//*[@id="block-block-40"]/div/div[@class="block-content content"]/p[@class="p1"]'), 'Se encuentra subtitulo de que hacemos...'); //comprobar subtitulos que hacemos...
     });
     casper.then(function(){
-        test.assertExists(x('//article[@id="block-views-what-we-do-block"]/div/div[@class="view-content"]'), 'Se encuentra lista de tipos'); //comprobar lista de tipos
+        test.assertExists(x('//*[@class="view-content"]/ul[@class="item-list"]'), 'Se encuentra lista de tipos'); //comprobar lista de tipos
     });
     casper.then(function(){
-        test.assertExists(x('//article[@id="block-views-company-logos-block"]/h2[@class="block-title"]'), 'Se encuentra trabajamos para...'); //comprobar trabajamos para...
+        test.assertExists(x('//*[@id="block-views-company-logos-block"]/h2[@class="block-title"]'), 'Se encuentra trabajamos para...'); //comprobar trabajamos para...
     });
     casper.then(function(){
-        test.assertExists(x('//article[@id="block-views-company-logos-block"]/div/div[@class="view-content"]'), 'Se encuentra lista de logos'); //comprobar lista de logos
+        test.assertExists(x('//*[@id="block-views-company-logos-block"]/div/div[@class="view-content"]'), 'Se encuentra lista de logos'); //comprobar lista de logos
     });
     casper.then(function(){
         test.assertExists(x('//section[@id="block-views-testimonials-block"]/h2[@class="block-title"]'), 'Se encuentra que dicen de nosotros...'); //comprobar que dicen de nosotros...
@@ -38,10 +39,10 @@ casper.test.begin('Comprobar pagina ASPgems - Test4 - Pagina Principal', 20, fun
         test.assertExists(x('//section[@id="block-views-testimonials-block"]/div/div[@class="view-content"]'), 'Se encuentra lista de testimonios'); //comprobar lista de testimonios
     });
     casper.then(function(){
-        test.assertExists(x('//*[@class="footer-left"]'), 'Se encuentra footer left'); //comprobar footer left
+        test.assertExists(x('//*[@class="footer-logo"]'), 'Se encuentra footer logo'); //comprobar footer logo
     });
     casper.then(function(){
-        test.assertExists(x('//*[@class="footer-right"]'), 'Se encuentra footer right'); //comprobar footer right
+        test.assertExists(x('//*[@class="idiomas"]'), 'Se encuentra enlaces a rss y twitter'); //comprobar enlaces a rss y twitter
     });
     casper.then(function(){
         test.assertExists(x('//*[@id="menu-bar"]'), 'Se encuentra menu-bar'); //comprobar menu-bar

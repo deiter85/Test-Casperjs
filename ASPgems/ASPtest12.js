@@ -1,14 +1,18 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test12 - Blog-Etiquetas', 8, function suite(test) {    
-  	casper.start('https://aspgems.com/', function() {
+casper.test.begin('Comprobar pagina ASPgems - Test12 - Blog-Etiquetas', 9, function suite(test) {    
+  	casper.start();
+    casper.thenOpen('/', function() {
    	  	casper.click("a[href='/blog']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/blog/tags']"); //hacer click en etiquetas, ver todas
+      	casper.click("a[href='/blog/tags']"); //hacer click en etiquetas ver todas
     });
   	casper.then(function() {		
   		  test.assertUrlMatch('https://aspgems.com/blog/tags', 'Direccion URL correcta'); //comprobar la direccion URL
+    });
+    casper.then(function() {
+        test.assertTitle('Etiquetas | ASPgems Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina
     });
     casper.then(function() {
   		  test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo

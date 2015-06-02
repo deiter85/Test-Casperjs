@@ -1,17 +1,18 @@
 var x = require('casper').selectXPath;
 
 casper.test.begin('Comprobar pagina ASPgems - Test6 - Blog', 8, function suite(test) {    
-  	casper.start('https://aspgems.com/', function() {
+  	casper.start();
+    casper.thenOpen('/', function() {
     	  casper.click("a[href='/blog']"); //hacer click en blog
   	});
   	casper.then(function(){		
  	  	  test.assertUrlMatch('https://aspgems.com/blog', 'Direccion URL correcta'); //comprobar la direccion URL
  	  });
   	casper.then(function(){
- 	  	  test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
+ 	  	  test.assertExists(x('//*[@class="block-content content"]'), 'Se encuentra el titulo'); //comprobar el titulo
   	});
   	casper.then(function(){
- 	  	  test.assertExists(x('//*[@id="block-customblocks-block-subtitle-blog"]'), 'Se encuentra el subtitulo'); //comprobar el subtitulo
+ 	  	  test.assertExists(x('//*[@class="subtitle"]'), 'Se encuentra el subtitulo'); //comprobar el subtitulo
  	  });
   	casper.then(function(){
  	  	  test.assertExists(x('//*[@id="block-system-main"]'), 'Se encuentra la lista de post'); //comprobar lista de post

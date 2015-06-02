@@ -1,7 +1,8 @@
 var x = require('casper').selectXPath;
 
 casper.test.begin('Comprobar pagina ASPgems - Test5 - Contacto', 7, function suite(test) {   
-	  casper.start('https://aspgems.com/', function() {
+	  casper.start();
+    casper.thenOpen('/', function() {
    	  	casper.click("a[href='/contacto']"); //hacer click en contactos
     });
   	casper.then(function(){		
@@ -11,7 +12,7 @@ casper.test.begin('Comprobar pagina ASPgems - Test5 - Contacto', 7, function sui
  		    test.assertExists('.webform-client-form', 'Se encuentra el formulario para enviar un e-mail'); //comprobar el formulario para enviar un e-mail
  	  });
     casper.then(function(){
- 		    test.assertExists('.block-title', 'Se encuentra el titulo encuentranos'); //comprobar titulo encuentranos
+ 		    test.assertExists(x('//*[@id="block-block-39"]'), 'Se encuentra el titulo encuentranos'); //comprobar titulo encuentranos
  	  });
     casper.then(function(){
  		    test.assertExists('.group-left', 'Se encuentra la direccion de la empresa'); //comprobar direccion de la empresa

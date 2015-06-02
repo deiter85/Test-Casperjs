@@ -1,7 +1,8 @@
 var x = require('casper').selectXPath;
 
 casper.test.begin('Comprobar pagina ASPgems - Test31 - Servicios-Rescue Projects', 7, function suite(test) {    
-  	casper.start('https://aspgems.com/', function(){
+  	casper.start();
+  	casper.thenOpen('/', function() {
    	  	casper.click("a[href='/servicios']"); //hacer click en servicio
     });
     casper.then(function() {
