@@ -1,82 +1,72 @@
-var userName = ****;
-var password = ****;
-
 var menueditor_add = ["/es/admin/people/create",
-            "/es/admin/structure/taxonomy/wiki_terms/add",
-            "/es/node/add/blog-article",
-                      "/es/node/add/classroom",
-            "/es/node/add/contact",
-            "/es/node/add/course",
+					            "/es/admin/structure/taxonomy/wiki_terms/add",
+					            "/es/node/add/blog-article",
+                      "/es/node/add/contact",
+                      "/es/node/add/course",
                       "/es/node/add/digital-certification",
-            "/es/node/add/faqs",
+                      "/es/node/add/faqs",
                       "/es/node/add/help",
-            "/es/node/add/help-video",
-            "/es/node/add/link",
-            "/es/node/add/news",
-            "/es/node/add/schedule-course",
-            "/es/node/add/plan-de-formaci-n-anual"];
+                      "/es/node/add/help-video",
+                      "/es/node/add/link",
+                      "/es/node/add/news",
+                      "/es/node/add/schedule-course",
+                      "/es/node/add/classroom",
+					            "/es/node/add/plan-de-formaci-n-anual"];
 
-var menueditor_statistics = ["/es/comment-stats",
+var menueditor_import = ["/es/admin/import/certifications",
+                         "/es/admin/import-schedule-course-list"];
+
+var menueditor_statistics = ["/es/statistics/best-rated-posts",
+                             "/es/admin/stats/comment-stats-by-user-total",
+                             "/es/admin/stats/comment-stats-by-user",
+                             "/es/comment-stats",
                              "/es/stats/expert_corner/content_creation",
+                             "/es/admin/your-opinion-results",
                              "/es/forum-stats",
-                             "/es/admin/structure/entityform_types/manage/your_opinion/submissions/autofields_table",
-                             "/es/user-points",
+                             "/es/statistics",
                              "/es/awards/list",
                              "/es/awards",
                              "/es/admin/config/people/userpoints",
+                             "/es/user-points",
+                             "/es/admin/stats/blog-stats-by-user",
+                             "/es/admin/bloggers-stats",                                                   
                              "/es/stats/people-no-picture",
-                             "/es/admin/valorated-courses-by-student",
-               "/es/admin/stats/comment-stats-by-user-total",
-                             "/es/admin/stats/comment-stats-by-user",
-               "/es/admin/stats/blog-stats-by-user",
-                             "/es/admin/bloggers-stats"];
+                             "/es/admin/rated-courses-by-student"];
 
-var menueditor_admin = ["/es/admin/structure/entity-type/user_awards/user_awards",
-                        "/es/admin-faq",
-                        "/es/admin/store-product",
-                        "/es/admin-classrooms",
-                        "/es/admin-help/help",
+var menueditor_admin = ["/es/admin-formacion-anual",
+                        "/es/admin/structure/entity-type/user_awards/user_awards",
+                        "/es/admin-blog-entries",
                         "/es/admin/content/comment",
                         "/es/admin-contacts",
-                        "/es/admin-courses",
-                        "/es/admin-link",
-                        "/es/admin-blog-entries",
-                        "/es/admin-formacion-anual",
-                        "/es/admin/schedule-courses",
-                        "/es/admin-news",
-                        "/es/wiki",
-                        "/es/wiki/edit-terms",
                         "/es/admin/admin-course-request",
-                        "/es/admin/commerce/orders",
+                        "/es/admin-courses",
+                        "/es/admin-faq",
+                        "/es/admin-help/help",
+                        "/es/admin-news",
+                        "/es/admin-link",
                         "/es/admin/store-product",
-                        "/es/admin-tags"];
+                        "/es/admin/schedule-courses",
+                        "/es/admin-classrooms",
+                        "/es/admin/commerce/orders",
+                        "/es/admin-tags",                       
+                        "/es/wiki",
+                        "/es/wiki/edit-terms"];
 
-var menueditor_users = ["/es/admin/config/system/flood-unblock",
-                        "/es/export-all-users",
-                        "/es/dirigido-a",
+var menueditor_users = ["/es/dirigido-a",
                         "/es/admin-users/emails",
+                        "/es/export-all-users",
                         "/es/admin-users/groups",
+                        "/es/users-subscribed-to-new-content",
                         "/es/point-transaction-adminstration",
                         "/es/usuarios-suscritos-aulas",
-                        "/es/usuarios-suscritos-a-novedades",
+                        "/es/admin/config/system/flood-unblock",
                         "/es/admin/users"];
 
 casper.test.begin('Campus Abbvie ES - Test14 - Control Menu de Editor', 0, function suite(test) {
   
-  casper.start('https://abbviecampus.com/uk/user', function() {
-    
-    this.echo('⌚ Logging in....');
-    
-    this.fill('form#user-login', {
-        
-        'name': userName,
-        'pass': password
-    
-    }, true);
-    
-    this.echo('Homepage was loaded successfully.');
-  
-  });
+  casper.start();
+
+  casper.thenOpen('/es', function() {});
 
   casper.then(function() {
   
@@ -124,6 +114,54 @@ casper.test.begin('Campus Abbvie ES - Test14 - Control Menu de Editor', 0, funct
     
     });
   
+  }
+
+casper.then(function() {
+  
+    this.echo(' ');
+    this.echo('---***___IMPORT___***---');
+    this.echo(' ');
+  
+  });
+
+  casper.then(function() {
+  
+    casper.click('a[href="/es/admin/import-schedule-course-list"]');
+    this.echo('Clicked in Import');
+  
+  });
+
+  casper.then(function() {
+    
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/es/admin/import-schedule-course-list');
+    
+  });
+
+  var indice5 = 0;
+
+  for (i = 0; i < menueditor_import.length; i++) {
+  
+    casper.then(function() {
+  
+      casper.click('a[href="' + menueditor_import[indice5] + '"]');
+      this.echo('Clicked in ' + menueditor_import[indice5]);
+  
+    });
+
+    casper.then(function() {
+    
+      test.assertHttpStatus(200);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_import[indice5]);
+    
+    });
+
+    casper.then(function() {
+    
+      indice5++;
+    
+    });
+
   }
 
   casper.then(function() {
@@ -245,7 +283,7 @@ casper.test.begin('Campus Abbvie ES - Test14 - Control Menu de Editor', 0, funct
     
       test.assertHttpStatus(200);
 
-      if (indice4 != 1) {
+      if (indice4 != 2) {
       
         test.assertUrlMatch('https://abbviecampus.com' + menueditor_users[indice4]);
       
@@ -277,20 +315,13 @@ casper.test.begin('Campus Abbvie ES - Test14 - Control Menu de Editor', 0, funct
 
   casper.then(function() {
     
-    test.assertElementCount('li', 61);
+  	test.assertElementCount('li', 69);
     
-  });
-  
-  casper.then(function() {
-  
-    casper.click('a[href="/uk/user/logout"]');
-    this.echo('⌚ Log out....');
-  
   });
   
   casper.run(function() {
   
-    test.done();
+  	test.done();
   
   });
 

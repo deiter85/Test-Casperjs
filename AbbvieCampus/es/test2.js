@@ -1,19 +1,10 @@
 var x = require('casper').selectXPath;
-var userName = ****;
-var password = ****;
 
 casper.test.begin('Campus Abbvie ES - Test2 - Catalogo y Aula', 8, function suite(test) {
 
-    casper.start('https://abbviecampus.com/es/user', function() {
-        this.echo('⌚ Logging in....');
-        this.fill('form#user-login', {
-            'name': userName,
-            'pass': password
-        }, true);
-        this.echo('Homepage was loaded successfully.');
-    });
+    casper.start();
 
-    casper.wait(500, function() {});
+    casper.thenOpen('/es', function() {});
 
     casper.then(function(){
         casper.click('a[href="/es/catalogue"]');
@@ -55,11 +46,6 @@ casper.test.begin('Campus Abbvie ES - Test2 - Catalogo y Aula', 8, function suit
 
     casper.then(function() {
         test.assertExists(x('//*[@class="view-content"]'), 'Find an element matching: LISTA DE AULAS');
-    });
-    
-    casper.then(function() {
-        casper.click('a[href="/es/user/logout"]');
-        this.echo('⌚ Log out....');
     });
 
     casper.run(function() {

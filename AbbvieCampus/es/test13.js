@@ -1,29 +1,20 @@
 var x = require('casper').selectXPath;
-var userName = ****;
-var password = ****;
 
 casper.test.begin('Campus Abbvie ES - Test13 - Foro', 9, function suite(test) {
     
-    casper.start('https://abbviecampus.com/es/user', function() {
-        this.echo('⌚ Logging in....');
-        this.fill('form#user-login', {
-            'name': userName,
-            'pass': password
-        }, true);
-        this.echo('Homepage was loaded successfully.');
-    });
+    casper.start();
 
-    casper.wait(500, function() {});
+    casper.thenOpen('/es', function() {});
 
     casper.then(function(){
-        casper.click('a[href="/es/forum/1611"]');
+        casper.click('a[href="/es/forum"]');
         this.echo('CLicked in Aulas');
     });
 
     casper.then(function() {
-        test.assertTitle('Aulas | AbbVie');
+        test.assertTitle('Foros | AbbVie');
         test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/es/forum/1611');
+        test.assertUrlMatch('https://abbviecampus.com/es/forum');
     });
 
     casper.then(function(){
@@ -48,11 +39,6 @@ casper.test.begin('Campus Abbvie ES - Test13 - Foro', 9, function suite(test) {
         test.assertTitle('Ventas | AbbVie');
         test.assertHttpStatus(200);
         test.assertUrlMatch('https://abbviecampus.com/es/forum/1632');
-    });
-
-    casper.then(function() {
-        casper.click('a[href="/es/user/logout"]');
-        this.echo('⌚ Log out....');
     });
 
     casper.run(function() {

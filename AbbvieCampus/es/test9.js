@@ -1,18 +1,8 @@
-var userName = ****;
-var password = ****;
-
 casper.test.begin('Campus Abbvie ES - Test9 - Aulas', 44, function suite(test) {
 
-  casper.start('https://abbviecampus.com/es/user', function() {
-    this.echo('⌚ Logging in....');
-    this.fill('form#user-login', {
-      'name': userName,
-      'pass': password
-    }, true);
-    this.echo('Homepage was loaded successfully.');
-  });
+  casper.start();
 
-  casper.wait(500, function() {});
+  casper.thenOpen('/es', function() {});
 
   casper.then(function() {
     casper.click('a[href="/es/list-of-classrooms"]');
@@ -279,11 +269,6 @@ casper.test.begin('Campus Abbvie ES - Test9 - Aulas', 44, function suite(test) {
   casper.then(function() {
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es/studyrooms/community-relations/home');
-  });
-
-  casper.then(function() {
-    casper.click('a[href="/es/user/logout"]');
-    this.echo('⌚ Log out....');
   });
 
   casper.then(function() {

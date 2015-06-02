@@ -3,21 +3,21 @@ var password = ****;
 
 casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal', 48, function suite(test) {
 
-  casper.start('https://abbviecampus.com/es/user', function() {
+  casper.start();
+
+  casper.thenOpen('/es/user', function() {
     this.echo('⌚ Logging in....');
     this.fill('form#user-login', {
-        'name': userName,
-        'pass': password
+      	'name': userName,
+      	'pass': password
     }, true);
     this.echo('Homepage was loaded successfully.');
   });
 
-  casper.wait(500, function() {});
-
   casper.wait(50, function() {});
 
   casper.then(function() {
-    test.assertTitle('AbbVie');
+	  test.assertTitle('AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es');
   });
@@ -41,7 +41,7 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
   });
 
   casper.then(function() {
-    test.assertTitle('Aula | AbbVie');
+    test.assertTitle('Aulas | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es/list-of-classrooms');
   });
@@ -49,12 +49,12 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
   casper.back();
 
   casper.then(function() {
-    casper.click('a[href="/es/forum/1611"]');
+    casper.click('a[href="/es/forum"]');
     this.echo('Clicked in Foro');
   });
 
   casper.then(function() {
-    test.assertTitle('Aulas | AbbVie');
+    test.assertTitle('Foros | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es/forum');
   });
@@ -93,7 +93,7 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
     });
 
   casper.then(function() {
-    test.assertTitle('Point program | AbbVie');
+    test.assertTitle('Programa de puntos | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es/point-program');
   });
@@ -118,11 +118,11 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
 
   casper.then(function() {
     casper.click('a[href="/es/annual-training"]');
-    this.echo('Clicked in Formacion anual');
+    this.echo('Clicked in Formación anual');
   });
 
   casper.then(function() {
-    test.assertTitle('Annual training | AbbVie');
+    test.assertTitle('Formacion anual | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es/annual-training');
   });
@@ -195,6 +195,19 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
   casper.back();
 
   casper.then(function() {
+    casper.click('a[href="/es/contacts"]');
+    this.echo('Clicked in Contactos');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Contactos | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/es/contacts');
+  });
+
+  casper.back();
+
+  casper.then(function() {
     casper.click('a[href="/es/suggestions"]');
     this.echo('Clicked in Sugerencias');
   });
@@ -214,11 +227,6 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
     test.assertTitle('AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es/');
-  });
-
-  casper.then(function() {
-    casper.click('a[href="/es/user/logout"]');
-    this.echo('⌚ Log out....');
   });
 
   casper.run(function() {

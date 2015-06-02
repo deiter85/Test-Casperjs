@@ -1,19 +1,10 @@
 var x = require('casper').selectXPath;
-var userName = ****;
-var password = ****;
 
-casper.test.begin('Campus Abbvie ES - Test12 - Busqueda', 6, function suite(test) {   
+casper.test.begin('Campus Abbvie ES - Test12 - Busqueda', 7, function suite(test) {   
     
-    casper.start('https://abbviecampus.com/es/user', function() {
-        this.echo('⌚ Logging in....');
-        this.fill('form#user-login', {
-            'name': userName,
-            'pass': password
-        }, true);
-        this.echo('Homepage was loaded successfully.');
-    });
+    casper.start();
 
-    casper.wait(500, function() {});
+    casper.thenOpen('/es', function() {});
 
     casper.then(function(){
         this.echo('⌚ Search....');
@@ -35,7 +26,7 @@ casper.test.begin('Campus Abbvie ES - Test12 - Busqueda', 6, function suite(test
     });
 
     casper.then(function() {
-        test.assertExists(x('//*[@id="tasks"]'), 'Find an element matching: BOTONES CONTENIDO USUARIO');
+        test.assertExists(x('//*[@id="edit-submit"]'), 'Find an element matching: BOTON BUSCAR');
     });
 
     casper.then(function() {
@@ -47,8 +38,7 @@ casper.test.begin('Campus Abbvie ES - Test12 - Busqueda', 6, function suite(test
     });
 
     casper.then(function() {
-        casper.click('a[href="/es/user/logout"]');
-        this.echo('⌚ Log out....');
+        test.assertExists(x('//*[@class="item-list item-list-pager"]'), 'Find an element matching: BOTONES DE PAGINAS');
     });
 
     casper.run(function() {
