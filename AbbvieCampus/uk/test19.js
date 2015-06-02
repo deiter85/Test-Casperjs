@@ -1,381 +1,236 @@
 var userName = ****;
 var password = ****;
 
-casper.test.begin('Campus Abbvie UK - Test18 - Studyroom (Part 4)', 60, function suite(test) {   
-    
-    casper.start('https://abbviecampus.com/uk/user', function() {
-        this.echo('⌚ Logging in....');
-        this.fill('form#user-login', {
-            'name': userName,
-            'pass': password
-        }, true);
-        this.echo('Homepage was loaded successfully.');
-    });
-
-    casper.wait(500, function() {});
-
-    casper.then(function(){
-        casper.click('a[href="/uk/list-of-classrooms"]');
-        this.echo('Clicked in Studyroom');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/patients-at-heart"]');
-        this.echo('Clicked in Patients at heart');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/patients-at-heart/expert-corner"]');
-        this.echo('Clicked in Patients at heart/Expert blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/patients-at-heart/expert-corner');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/patients-at-heart/collaborative"]');
-        this.echo('Clicked in Patients at heart/Collaborative blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/patients-at-heart/collaborative');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/patients-at-heart/courses"]');
-        this.echo('Clicked in Patients at heart/Courses');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/patients-at-heart/courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/patients-at-heart/edit-courses"]');
-        this.echo('Clicked in Patients at heart/Reorder');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/patients-at-heart/edit-courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/patients-at-heart"]');
-        this.echo('Clicked in Patients at heart/Home');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/patients-at-heart/home');
-    });
-
-    casper.thenOpen('/uk/list-of-classrooms', function() {
-        this.echo('⌚ Opened Studyroom');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/personal-development"]');
-        this.echo('Clicked in Personal development');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/personal-development/expert-corner"]');
-        this.echo('Clicked in Personal development/Expert blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/personal-development/expert-corner');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/personal-development/collaborative"]');
-        this.echo('Clicked in Personal development/Collaborative blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/personal-development/collaborative');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/personal-development/courses"]');
-        this.echo('Clicked in Personal development/Courses');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/personal-development/courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/personal-development/edit-courses"]');
-        this.echo('Clicked in Personal development/Reorder');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/personal-development/edit-courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/personal-development"]');
-        this.echo('Clicked in Personal development/Home');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/personal-development/home');
-    });
-
-    casper.thenOpen('/uk/list-of-classrooms', function() {
-        this.echo('⌚ Opened Studyroom');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/product-knowledge"]');
-        this.echo('Clicked in Product knowledge');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/product-knowledge/expert-corner"]');
-        this.echo('Clicked in Product knowledge/Expert blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/product-knowledge/expert-corner');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/product-knowledge/collaborative"]');
-        this.echo('Clicked in Product knowledge/Collaborative blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/product-knowledge/collaborative');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/product-knowledge/courses"]');
-        this.echo('Clicked in Product knowledge/Courses');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/product-knowledge/courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/product-knowledge/edit-courses"]');
-        this.echo('Clicked in Product knowledge/Reorder');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/product-knowledge/edit-courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/product-knowledge"]');
-        this.echo('Clicked in Product knowledge/Home');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/product-knowledge/home');
-    });
-
-    casper.thenOpen('/uk/list-of-classrooms', function() {
-        this.echo('⌚ Opened Studyroom');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/systems-and-finance"]');
-        this.echo('Clicked in Systems and finance');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/systems-and-finance/expert-corner"]');
-        this.echo('Clicked in Systems and finance/Expert blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/systems-and-finance/expert-corner');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/systems-and-finance/collaborative"]');
-        this.echo('Clicked in Systems and finance/Collaborative blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/systems-and-finance/collaborative');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/systems-and-finance/courses"]');
-        this.echo('Clicked in Systems and finance/Courses');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/systems-and-finance/courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/systems-and-finance/edit-courses"]');
-        this.echo('Clicked in Systems and finance/Reorder');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/systems-and-finance/edit-courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/systems-and-finance"]');
-        this.echo('Clicked in Systems and finance/Home');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/systems-and-finance/home');
-    });
-
-    casper.thenOpen('/uk/list-of-classrooms', function() {
-        this.echo('⌚ Opened Studyroom');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/veeva-customer-relationship-management"]');
-        this.echo('Clicked in Veeva customer relationship management');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/veeva-customer-relationship-management/expert-corner"]');
-        this.echo('Clicked in Veeva customer relationship management/Expert blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/veeva-customer-relationship-management/expert-corner');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/veeva-customer-relationship-management/collaborative"]');
-        this.echo('Clicked in Veeva customer relationship management/Collaborative blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/veeva-customer-relationship-management/collaborative');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/veeva-customer-relationship-management/courses"]');
-        this.echo('Clicked in Veeva customer relationship management/Courses');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/veeva-customer-relationship-management/courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/veeva-customer-relationship-management/edit-courses"]');
-        this.echo('Clicked in Veeva customer relationship management/Reorder');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/veeva-customer-relationship-management/edit-courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/veeva-customer-relationship-management"]');
-        this.echo('Clicked in Veeva customer relationship management/Home');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/veeva-customer-relationship-management/home');
-    });
-
-    casper.thenOpen('/uk/list-of-classrooms', function() {
-        this.echo('⌚ Opened Studyroom');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/zinc"]');
-        this.echo('Clicked in Zinc');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/zinc/expert-corner"]');
-        this.echo('Clicked in Zinc/Expert blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/zinc/expert-corner');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/zinc/collaborative"]');
-        this.echo('Clicked in Zinc/Collaborative blog');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/zinc/collaborative');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/zinc/courses"]');
-        this.echo('Clicked in Zinc/Courses');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/zinc/courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/zinc/edit-courses"]');
-        this.echo('Clicked in Zinc/Reorder');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/zinc/edit-courses');
-    });
-
-    casper.then(function(){
-        casper.click('a[href="/uk/studyrooms/zinc"]');
-        this.echo('Clicked in Zinc/Home');
-    });
-
-    casper.then(function() {
-        test.assertHttpStatus(200);
-        test.assertUrlMatch('https://abbviecampus.com/uk/studyrooms/zinc/home');
-    });
-
-    casper.then(function() {
-        casper.click('a[href="/uk/user/logout"]');
-        this.echo('⌚ Log out....');
-    });
-
-    casper.run(function() {
-        test.done();
-    });
+casper.test.begin('Campus Abbvie UK - Test19 - Menu Control Homepage', 51, function suite(test) {
+
+  casper.start();
+
+  casper.thenOpen('/uk/user', function() {
+    this.echo('⌚ Logging in....');
+    this.fill('form#user-login', {
+        'name': userName,
+        'pass': password
+    }, true);
+    this.echo('Homepage was loaded successfully.');
+  });
+
+  casper.wait(50, function() {});
+
+  casper.then(function() {
+	  test.assertTitle('AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk');
+  });
+
+  casper.then(function() {
+    casper.click('a[href="/uk/catalogue"]');
+    this.echo('Clicked in Catalogue');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Catalogue of courses | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/catalogue');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/list-of-classrooms"]');
+    this.echo('Clicked in Studyrooms');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Studyrooms | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/list-of-classrooms');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/forum"]');
+    this.echo('Clicked in Forums');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Forums | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/forum');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/course/lyndacom-free-online-training"]');
+    this.echo('Clicked in LYNDA:COM');
+  });
+
+  casper.then(function() {
+    test.assertTitle('lynda.com - free online training | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/course/lyndacom-free-online-training');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/my-training"]');
+    this.echo('Clicked in My training');
+  });
+
+  casper.then(function() {
+    test.assertTitle('My training | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/my-training');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/point-program"][class=sf-depth-2]');
+    this.echo('Clicked in Rewards/Information');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Point program | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/point-program');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/redeem-your-user-points"]');
+    this.echo('Clicked in Rewards/My points');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Redeem your userpoints | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/redeem-your-user-points');
+  });
+
+  casper.back();
+
+/***********************************************************************************************************************************
+***********************************************************************************************************************************/
+
+  casper.then(function() {
+    casper.click('a[href="/uk/annual-training"]');
+    this.echo('Clicked in Annual training');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Annual training | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/annual-training');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/news"]');
+    this.echo('Clicked in News');
+  });
+
+  casper.then(function() {
+    test.assertTitle('News | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/news');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/links"]');
+    this.echo('Clicked in Links');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Links | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/links');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/help"]');
+    this.echo('Clicked in Help');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Help | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/help');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/wiki"]');
+    this.echo('Clicked in Wiki');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Wiki terms | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/wiki');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/contacts"]');
+    this.echo('Clicked in Contacts');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Contacts | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/contacts');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/faqs"]');
+    this.echo('Clicked in FAQS');
+  });
+
+  casper.then(function() {
+    test.assertTitle('FAQs | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/faqs');
+  });
+
+  casper.back();
+
+  casper.then(function() {
+    casper.click('a[href="/uk/suggestions"]');
+    this.echo('Clicked in Sugerencias');
+  });
+
+  casper.then(function() {
+    test.assertTitle('Suggestions | AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/suggestions');
+  });
+
+  casper.then(function() {
+    casper.click('a[href="/uk/"]');
+    this.echo('Clicked in Home');
+  });
+
+  casper.then(function() {
+    test.assertTitle('AbbVie');
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/');
+  });
+
+  casper.run(function() {
+    test.done();
+  });
 
 });
