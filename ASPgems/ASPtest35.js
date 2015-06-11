@@ -1,40 +1,36 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test35 - Servicios-Curso Drupal Caceres', 7, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems UK - Test35 - Blog', 8, function suite(test) {    
   	casper.start();
-    casper.thenOpen('/', function() {
-   	  	casper.click("a[href='/servicios']"); //hacer click en servicio
-    });
-    casper.then(function(){ 
-        casper.click('input[name="field_service_type_value"][value="2"]'); //hacer click en formacion
-    });
-    casper.wait(1000, function() {});
-    casper.then(function() {
-   	  	casper.click("a[href='/servicios/curso-gratis-de-drupal-en-caceres']"); //hacer click en curso drupal caceres
-    });
-  	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/servicios/curso-gratis-de-drupal-en-caceres', 'Direccion URL correcta'); //comprobar la direccion URL
-    });
-    casper.then(function() {
-  		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
-    });
-    casper.then(function() {
-        test.assertSelectorHasText('h1', 'Curso gratis de Drupal en Cáceres', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
-    });
-    casper.then(function() {
-  		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen
-    });
-    casper.then(function() {
-        test.assertExists(x('//a[@class="colorbox init-colorbox-processed cboxElement"]'), 'Se encuentra el link de la imagen'); //comprobar link en la imagen
-    });
-    casper.then(function() {
-    	  test.assertExists(x('//div[@class="field field-name-body field-type-text-with-summary field-label-hidden view-mode-full image-and-form"]'), 'Se encuentra el texto de la pagina'); //comprobar texto de la pagina
-    });
-    casper.then(function() {
-      	test.assertExists(x('//form[@class="webform-client-form image-and-form"]'), 'Se encuentra el formulario ¿En que te podemos ayudar?'); //comprobar formulario ¿En que te podemos ayudar?
-    });
-   	casper.run(function() {
-   		  casper.echo("Test finalizado"); //mensaje
-   		  test.done();
-   	});
+    casper.thenOpen('/en', function() {
+    	  casper.click("a[href='/en/blog']"); //hacer click en blog
+  	});
+  	casper.then(function(){		
+ 	  	  test.assertUrlMatch('https://aspgems.com/en/blog', 'Direccion URL correcta'); //comprobar la direccion URL
+ 	  });
+  	casper.then(function(){
+ 	  	  test.assertExists(x('//*[@class="block-content content"]'), 'Se encuentra el titulo'); //comprobar el titulo
+  	});
+  	casper.then(function(){
+ 	  	  test.assertExists(x('//*[@class="subtitle"]'), 'Se encuentra el subtitulo'); //comprobar el subtitulo
+ 	  });
+  	casper.then(function(){
+ 	  	  test.assertExists(x('//*[@id="block-system-main"]'), 'Se encuentra la lista de post'); //comprobar lista de post
+ 	  });
+  	casper.then(function(){
+ 	  	  test.assertExists(x('//*[@id="block-views-tags-block"]'), 'Se encuentra la lista de etiquetas'); //comprobar lista de etiquetas
+ 	  });
+  	casper.then(function(){
+ 	  	  test.assertExists(x('//*[@id="block-mailchimp-signup-sign-up"]'), 'Se encuentra el cuadro recibit novedades'); //comprobar cuadro recibir novedades
+ 	  });
+  	casper.then(function(){
+ 	  	  test.assertExists(x('//*[@id="block-views-posts-block-4"]'), 'Se encuentra la lista de ultimos post'); //comprobar lista ultimos post
+ 	  });
+  	casper.then(function(){	  	 	  	
+ 	  	  test.assertExists(x('//*[@id="block-customblocks-block-flipboard"]'), 'Se encuentra el cuadro nuestra revista'); //comprobar cuadro nuestra revista
+	  });
+  	casper.run(function() {
+    	  casper.echo("Test finalizado"); //mensaje
+    	  test.done();
+  	});
 });

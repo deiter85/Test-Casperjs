@@ -1,21 +1,21 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test23 - Servicios-Desarrollo Web', 7, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test23 - Servicios-Big Data', 7, function suite(test) {    
   	casper.start();
   	casper.thenOpen('/', function() {
    	  	casper.click("a[href='/servicios']"); //hacer click en servicio
     });
     casper.then(function() {
-   	  	casper.click("a[href='/servicios/desarrollo-web']"); //hacer click en desarrollo web
+   	  	casper.click("a[href='/servicios/big-data']"); //hacer click en big data
     });
   	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/servicios/desarrollo-web', 'Direccion URL correcta'); //comprobar la direccion URL
+  	   	test.assertUrlMatch('https://aspgems.com/servicios/big-data', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {
   		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
     });
     casper.then(function() {
-        test.assertSelectorHasText('h1', 'Desarrollo Web', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
+        test.assertSelectorHasText('h1', 'Big Data', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
     });
     casper.then(function() {
   		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen

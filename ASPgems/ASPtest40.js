@@ -1,15 +1,15 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test9 - Blog-Etiquetas', 9, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems UK - Test40 - Blog-Tags', 9, function suite(test) {    
   	casper.start();
-    casper.thenOpen('/', function() {
-   	  	casper.click("a[href='/blog']"); //hacer click en presupuesto
+    casper.thenOpen('/en', function() {
+   	  	casper.click("a[href='/en/blog']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/blog/tags']"); //hacer click en etiquetas ver todas
+      	casper.click("a[href='/en/blog/tags']"); //hacer click en etiquetas ver todas
     });
   	casper.then(function() {		
-  		  test.assertUrlMatch('https://aspgems.com/blog/tags', 'Direccion URL correcta'); //comprobar la direccion URL
+  		  test.assertUrlMatch('https://aspgems.com/en/blog/tags', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {
         test.assertTitle('Etiquetas | ASPgems Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina

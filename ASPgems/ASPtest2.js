@@ -1,41 +1,33 @@
-/*==============================================================================*/
-/* Casper generated Thu Mar 26 2015 10:14:33 GMT+0100 (CET) */
-/*==============================================================================*/
-
 var x = require('casper').selectXPath;
-casper.options.viewportSize = {width: 1280, height: 690};
-casper.on('page.error', function(msg, trace) {
-   this.echo('Error: ' + msg, 'ERROR');
-   for(var i=0; i<trace.length; i++) {
-       var step = trace[i];
-       this.echo('   ' + step.file + ' (line ' + step.line + ')', 'ERROR');
-   }
-});
-casper.test.begin('Resurrectio test', function(test) {
-   casper.start('https://aspgems.com/');
-   casper.waitForSelector(x("//a[normalize-space(text())='presupuesto']"),
-       function success() {
-           test.assertExists(x("//a[normalize-space(text())='presupuesto']"));
-           this.click(x("//a[normalize-space(text())='presupuesto']"));
-       },
-       function fail() {
-           test.assertExists(x("//a[normalize-space(text())='presupuesto']"));
-   });
-   casper.waitForSelector("h2",
-       function success() {
-           test.assertExists("h2");
-           this.click("h2");
-       },
-       function fail() {
-           test.assertExists("h2");
-   });
-   casper.waitForSelector(x("//*[contains(text(), \'¿No encuentras lo que buscas?\')]"),
-       function success() {
-           test.assertExists(x("//*[contains(text(), \'¿No encuentras lo que buscas?\')]"));
-         },
-       function fail() {
-           test.assertExists(x("//*[contains(text(), \'¿No encuentras lo que buscas?\')]"));
-   });
 
-   casper.run(function() {test.done();});
+casper.test.begin('Comprobar pagina ASPgems - Test2 - Contacto', 7, function suite(test) {   
+	  casper.start();
+    casper.thenOpen('/', function() {
+   	  	casper.click("a[href='/contacto']"); //hacer click en contactos
+    });
+  	casper.then(function(){		
+ 		    test.assertUrlMatch('https://aspgems.com/contacto', 'Direccion URL correcta'); //comprobar la direccion URL
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists('.webform-client-form', 'Se encuentra el formulario para enviar un e-mail'); //comprobar el formulario para enviar un e-mail
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists(x('//*[@id="block-block-39"]'), 'Se encuentra el titulo encuentranos'); //comprobar titulo encuentranos
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists('.group-left', 'Se encuentra la direccion de la empresa'); //comprobar direccion de la empresa
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists('.group-right', 'Se encuentra el mapa'); //comprobar mapa
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists(x('//*[@class="field field-name-title field-type-ds field-label-hidden view-mode-full"]'), 'Se encuentra el titulo'); //comprobar titulo
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists(x('//*[@class="field field-name-body field-type-text-with-summary field-label-hidden view-mode-full"]'), 'Se encuentra el subtitulo'); //comprobar subtitulo
+  	});
+  	casper.run(function() {
+   		  casper.echo("Test finalizado"); //mensaje
+   		  test.done(); 
+  	}); 
 });

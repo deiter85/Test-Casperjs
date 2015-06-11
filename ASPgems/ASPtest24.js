@@ -1,21 +1,21 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test24 - Servicios-Desarrollo Ruby on Rails', 7, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test24 - Servicios-Direccion Tecnica', 7, function suite(test) {    
   	casper.start();
   	casper.thenOpen('/', function() {
    	  	casper.click("a[href='/servicios']"); //hacer click en servicio
     });
     casper.then(function() {
-   	  	casper.click("a[href='/servicios/desarrollo-en-ruby-rails']"); //hacer click en desarrollo ruby on rails
+   	  	casper.click("a[href='/servicios/direccion-tecnica']"); //hacer click en direccion tecnica
     });
   	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/servicios/desarrollo-en-ruby-rails', 'Direccion URL correcta'); //comprobar la direccion URL
+  	   	test.assertUrlMatch('https://aspgems.com/servicios/direccion-tecnica', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {
   		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
     });
     casper.then(function() {
-        test.assertSelectorHasText('h1', 'Desarrollo en Ruby on Rails', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
+        test.assertSelectorHasText('h1', 'Dirección técnica', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
     });
     casper.then(function() {
   		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen

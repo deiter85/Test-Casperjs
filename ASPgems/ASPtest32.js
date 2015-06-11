@@ -1,6 +1,6 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test32 - Servicios-Curso Drupal', 7, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test32 - Servicios-Curso Drupal Caceres', 7, function suite(test) {    
   	casper.start();
     casper.thenOpen('/', function() {
    	  	casper.click("a[href='/servicios']"); //hacer click en servicio
@@ -10,16 +10,16 @@ casper.test.begin('Comprobar pagina ASPgems - Test32 - Servicios-Curso Drupal', 
     });
     casper.wait(1000, function() {});
     casper.then(function() {
-   	  	casper.click("a[href='/servicios/cursos-basicos-drupal']"); //hacer click en curso drupal
+   	  	casper.click("a[href='/servicios/curso-gratis-de-drupal-en-caceres']"); //hacer click en curso drupal caceres
     });
   	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/servicios/cursos-basicos-drupal', 'Direccion URL correcta'); //comprobar la direccion URL
+  	   	test.assertUrlMatch('https://aspgems.com/servicios/curso-gratis-de-drupal-en-caceres', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {
   		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
     });
     casper.then(function() {
-        test.assertSelectorHasText('h1', 'Cursos Básicos Drupal', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
+        test.assertSelectorHasText('h1', 'Curso gratis de Drupal en Cáceres', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
     });
     casper.then(function() {
   		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen

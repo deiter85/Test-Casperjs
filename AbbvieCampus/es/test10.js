@@ -29,7 +29,7 @@ casper.test.begin('Campus Abbvie ES - Test10 - Mis puntos, Mi cuenta y Sugerenci
     });
 
     casper.then(function() {
-        test.assertTitle('uk_editor | AbbVie');
+        test.assertTitle('casper_test | AbbVie');
     });
 
     casper.then(function() {
@@ -50,7 +50,7 @@ casper.test.begin('Campus Abbvie ES - Test10 - Mis puntos, Mi cuenta y Sugerenci
     });
 
     casper.then(function() {
-        test.assertTitle('Puntos para uk_editor | AbbVie');
+        test.assertTitle('Puntos para casper_test | AbbVie');
     });
 
     casper.then(function() {

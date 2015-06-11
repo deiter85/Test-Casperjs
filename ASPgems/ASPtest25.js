@@ -1,24 +1,21 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test25 - Servicios-Desarrollo Drupal', 8, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test25 - Servicios-Due Diligence', 7, function suite(test) {    
   	casper.start();
   	casper.thenOpen('/', function() {
    	  	casper.click("a[href='/servicios']"); //hacer click en servicio
     });
     casper.then(function() {
-   	  	casper.click("a[href='/servicios/desarrollo-drupal']"); //hacer click en desarrollo web
+   	  	casper.click("a[href='/servicios/due-diligence-tecnologico']"); //hacer click en due diligence
     });
   	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/servicios/desarrollo-drupal', 'Direccion URL correcta'); //comprobar la direccion URL
-    });
-    casper.then(function(){  
-        test.assertTitle('Desarrollo drupal | ASPgems Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina
+  	   	test.assertUrlMatch('https://aspgems.com/servicios/due-diligence-tecnologico', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {
   		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
     });
     casper.then(function() {
-        test.assertSelectorHasText('h1', 'Desarrollo Drupal', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
+        test.assertSelectorHasText('h1', 'Due Diligence Tecnológico', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
     });
     casper.then(function() {
   		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen

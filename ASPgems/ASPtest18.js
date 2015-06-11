@@ -1,19 +1,19 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test18 - Presupuesto-Aplicacion Gestion Avanzada', 8, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test18 - Presupuesto-Tienda Online', 8, function suite(test) {   
   	casper.start();
     casper.thenOpen('/', function() {
    	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/aplicacion-de-gestion-avanzada']"); //hacer click en aplicacion de gestion avanzada
+      	casper.click("a[href='/presupuesto/tienda-online-basica']"); //hacer click en tienda online basica
     });
   	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/presupuesto/aplicacion-de-gestion-avanzada', 'Direccion URL correcta'); //comprobar la direccion URL
+  	   	test.assertUrlMatch('https://aspgems.com/presupuesto/tienda-online-basica', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {  
-  		  test.assertTitle('Aplicación de gestión avanzada | ASPgems Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina
-  	});
+  		test.assertTitle('Tienda online básica | ASPgems Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina
+    });
     casper.then(function() {
         test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
     });

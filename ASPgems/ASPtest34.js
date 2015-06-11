@@ -1,40 +1,33 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test34 - Servicios-Curso Ruby', 7, function suite(test) {    
-  	casper.start();
-    casper.thenOpen('/', function() {
-   	  	casper.click("a[href='/servicios']"); //hacer click en servicio
+casper.test.begin('Comprobar pagina ASPgems UK - Test34 - Contact', 7, function suite(test) {   
+	  casper.start();
+    casper.thenOpen('/en', function() {
+   	  	casper.click("a[href='/en/contact']"); //hacer click en contactos
     });
-    casper.then(function(){ 
-        casper.click('input[name="field_service_type_value"][value="2"]'); //hacer click en formacion
-    });
-    casper.wait(1000, function() {});
-    casper.then(function() {
-   	  	casper.click("a[href='/servicios/curso-basico-de-ruby']"); //hacer click en curso ruby
-    });
-  	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/servicios/curso-basico-de-ruby', 'Direccion URL correcta'); //comprobar la direccion URL
-    });
-    casper.then(function() {
-  		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
-    });
-    casper.then(function() {
-        test.assertSelectorHasText('h1', 'Curso Básico de Ruby', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
-    });
-    casper.then(function() {
-  		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen
-    });
-    casper.then(function() {
-        test.assertExists(x('//a[@class="colorbox init-colorbox-processed cboxElement"]'), 'Se encuentra el link de la imagen'); //comprobar link en la imagen
-    });
-    casper.then(function() {
-    	  test.assertExists(x('//div[@class="field field-name-body field-type-text-with-summary field-label-hidden view-mode-full image-and-form"]'), 'Se encuentra el texto de la pagina'); //comprobar texto de la pagina
-    });
-    casper.then(function() {
-      	test.assertExists(x('//form[@class="webform-client-form image-and-form"]'), 'Se encuentra el formulario ¿En que te podemos ayudar?'); //comprobar formulario ¿En que te podemos ayudar?
-    });
-   	casper.run(function() {
+  	casper.then(function(){		
+ 		    test.assertUrlMatch('https://aspgems.com/en/contact', 'Direccion URL correcta'); //comprobar la direccion URL
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists('.webform-client-form', 'Se encuentra el formulario para enviar un e-mail'); //comprobar el formulario para enviar un e-mail
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists(x('//*[@id="block-block-39"]'), 'Se encuentra el titulo encuentranos'); //comprobar titulo encuentranos
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists('.group-left', 'Se encuentra la direccion de la empresa'); //comprobar direccion de la empresa
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists('.group-right', 'Se encuentra el mapa'); //comprobar mapa
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists(x('//*[@class="field field-name-title field-type-ds field-label-hidden view-mode-full"]'), 'Se encuentra el titulo'); //comprobar titulo
+ 	  });
+    casper.then(function(){
+ 		    test.assertExists(x('//*[@class="field field-name-body field-type-text-with-summary field-label-hidden view-mode-full"]'), 'Se encuentra el subtitulo'); //comprobar subtitulo
+  	});
+  	casper.run(function() {
    		  casper.echo("Test finalizado"); //mensaje
-   		  test.done();
-   	});
+   		  test.done(); 
+  	}); 
 });

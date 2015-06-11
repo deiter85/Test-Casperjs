@@ -1,12 +1,12 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test8 - Equipo', 9, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems UK - Test39 - Staff', 9, function suite(test) {    
   	casper.start();
-    casper.thenOpen('/', function() {
-   		casper.click("a[href='/equipo']"); //hacer click en presupuesto
+    casper.thenOpen('/en', function() {
+   		casper.click("a[href='/en/staff']"); //hacer click en presupuesto
   	});
   	casper.then(function(){		
-  		test.assertUrlMatch('https://aspgems.com/equipo', 'Direccion URL correcta'); //comprobar la direccion URL
+  		test.assertUrlMatch('https://aspgems.com/en/staff', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function(){ 
   		test.assertExists(x('//div[@class="block-content content"]'), 'Se encuentra el titulo'); //comprobar el titulo

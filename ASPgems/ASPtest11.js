@@ -1,39 +1,39 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test11 - Equipo', 9, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test11 - Presupuesto-Aplicacion Gestion', 8, function suite(test) {   
   	casper.start();
     casper.thenOpen('/', function() {
-   		casper.click("a[href='/equipo']"); //hacer click en presupuesto
+   	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
   	});
-  	casper.then(function(){		
-  		test.assertUrlMatch('https://aspgems.com/equipo', 'Direccion URL correcta'); //comprobar la direccion URL
+    casper.then(function() {
+      	casper.click("a[href='/presupuesto/aplicacion-de-gestion']"); //hacer click en aplicacion de gestion
     });
-    casper.then(function(){ 
-  		test.assertExists(x('//div[@class="block-content content"]'), 'Se encuentra el titulo'); //comprobar el titulo
+  	casper.then(function() {		
+  	   	test.assertUrlMatch('https://aspgems.com/presupuesto/aplicacion-de-gestion', 'Direccion URL correcta'); //comprobar la direccion URL
     });
-    casper.then(function(){ 
-  		test.assertExists(x('//*[@class="subtitle"]'), 'Se encuentra el subtitulo'); //comprobar el subtitulo
+    casper.then(function() {
+  		  test.assertTitle('Aplicación de gestión | ASPgems Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina
     });
-    casper.then(function(){ 
-  		test.assertExists(x('//div[@id="content"]/div/div/div[@class="view-content"]'), 'Se encuentra la lista de equipo'); //comprobar lista de equipo
+    casper.then(function() {
+  		  test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
     });
-    casper.then(function(){ 
-      test.assertExists(x('//div[@role="article"]'), 'Se encuentra el cuadro de empleado'); //comprobar cuadro de empleado
+    casper.then(function() {
+  		  test.assertExists(x('//a[@title="Volver a presupuestos" and @href="/presupuesto"]'), 'Se encuentra el link volver a presupuesto'); //comprobar link volver a presupuesto
     });
-    casper.then(function(){ 
-  		test.assertExists(x('//img[@class="image-style-employee-medium"]'), 'Se encuentra la foto del cuadro de empleado'); //comprobar foto cuadro de empleado
+    casper.then(function() {
+    	  test.assertExists(x('//*[@class="field field-name-field-project-type-description field-type-text-with-summary field-label-hidden view-mode-full"]'), 'Se encuentra el texto de la pagina'); //comprobar texto de la pagina
     });
-    casper.then(function(){ 
-		  test.assertExists(x('//div[@role="article"]/div[@class="group-right"]'), 'Se encuentra el texto del cuadro de empleado'); //comprobar texto cuadro de empleado
+    casper.then(function() {
+      	test.assertExists(x('//*[@class="field field-name-field-project-type-range field-type-image field-label-above view-mode-full"]'), 'Se encuentra el cuadro rango de precio'); //comprobar cuadro rango de precio 
     });
-    casper.then(function(){ 
-    	test.assertExists(x('//h2[@class="block-title"]'), 'Se encuentra el texto asi se vive en aspgems'); //comprobar texto asi se vive en aspgems
+    casper.then(function() {          
+      	test.assertExists(x('//*[@class="field field-name-field-project-type-time-range field-type-image field-label-above view-mode-full"]'), 'Se encuentra el cuadro rango de tiempo'); //comprobar cuadro rango de tiempo
     });
-    casper.then(function(){ 
-    	test.assertExists(x('//div[@id="views_slideshow_cycle_main_lives_in_aspgem-block"]'), 'Se encuentra el cuadro de fotos'); //comprobar cuadro de fotos
+    casper.then(function() {
+      	test.assertExists(x('//*[@id="block-webform-client-block-1100"]'), 'Se encuentra el formulario Solicitar presupuesto'); //comprobar formulario Solicitar presupuesto
    	});
    	casper.run(function() {
-   		casper.echo("Test finalizado"); //mensaje
-   		test.done();
+   		  casper.echo("Test finalizado"); //mensaje
+   		  test.done();
    	});
 });

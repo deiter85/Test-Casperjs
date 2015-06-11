@@ -1,5 +1,5 @@
-var userName = ****;
-var password = ****;
+var userName = '****';
+var password = '****';
 
 casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal', 48, function suite(test) {
 
@@ -14,7 +14,7 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
     this.echo('Homepage was loaded successfully.');
   });
 
-  casper.wait(50, function() {});
+  casper.wait(25, function() {});
 
   casper.then(function() {
 	  test.assertTitle('AbbVie');
@@ -112,9 +112,6 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
   });
 
   casper.back();
-
-/***********************************************************************************************************************************
-***********************************************************************************************************************************/
 
   casper.then(function() {
     casper.click('a[href="/es/annual-training"]');

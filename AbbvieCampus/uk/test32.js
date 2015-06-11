@@ -1,6 +1,4 @@
-var menueditor_add = ["/uk/admin/people/create",
-                      "/uk/admin/structure/taxonomy/wiki_terms/add",
-                      "/uk/node/add/blog-article",
+var menueditor_add = ["/uk/node/add/blog-article",
                       "/uk/node/add/contact",
                       "/uk/node/add/course",
                       "/uk/node/add/digital-certification",
@@ -11,7 +9,9 @@ var menueditor_add = ["/uk/admin/people/create",
                       "/uk/node/add/news",
                       "/uk/node/add/schedule-course",
                       "/uk/node/add/classroom",
-                      "/uk/node/add/plan-de-formaci-n-anual"];
+                      "/uk/node/add/plan-de-formaci-n-anual",
+                      "/uk/admin/people/create",
+                      "/uk/admin/structure/taxonomy/wiki_terms/add"];
 
 var menueditor_import = ["/uk/admin/import/certifications",
                          "/uk/admin/import-schedule-course-list"];
@@ -29,9 +29,9 @@ var menueditor_statistics = ["/uk/statistics/best-rated-posts",
                              "/uk/admin/config/people/userpoints",
                              "/uk/user-points",
                              "/uk/admin/stats/blog-stats-by-user",
-                             "/uk/admin/bloggers-stats",                                                   
-                             "/uk/stats/people-no-picture",
-                             "/uk/admin/rated-courses-by-student"];
+                             "/uk/admin/bloggers-stats",
+                             "/uk/admin/rated-courses-by-student",                                                   
+                             "/uk/stats/people-no-picture"];
 
 var menueditor_admin = ["/uk/admin-formacion-anual",
                         "/uk/admin/structure/entity-type/user_awards/user_awards",
@@ -42,12 +42,13 @@ var menueditor_admin = ["/uk/admin-formacion-anual",
                         "/uk/admin-courses",
                         "/uk/admin-faq",
                         "/uk/admin-help/help",
+                        "/uk/admin-help/videohelp",
                         "/uk/admin-news",
                         "/uk/admin-link",
-                        "/uk/admin/store-product",
                         "/uk/admin/schedule-courses",
-                        "/uk/admin-classrooms",
                         "/uk/admin/commerce/orders",
+                        "/uk/admin/store-product",
+                        "/uk/admin-classrooms",
                         "/uk/admin-tags",                       
                         "/uk/wiki",
                         "/uk/wiki/edit-terms"];
@@ -114,102 +115,6 @@ casper.test.begin('Campus Abbvie UK - Test32 - Menu Control of Editor', 0, funct
     
     });
   
-  }
-
-  casper.then(function() {
-  
-    this.echo(' ');
-    this.echo('---***___IMPORT___***---');
-    this.echo(' ');
-  
-  });
-
-  casper.then(function() {
-  
-    casper.click('a[href="/uk/admin/import-schedule-course-list"]');
-    this.echo('Clicked in Import');
-  
-  });
-
-  casper.then(function() {
-    
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbviecampus.com/uk/admin/import-schedule-course-list');
-    
-  });
-
-  var indice5 = 0;
-
-  for (i = 0; i < menueditor_import.length; i++) {
-  
-    casper.then(function() {
-  
-      casper.click('a[href="' + menueditor_import[indice5] + '"]');
-      this.echo('Clicked in ' + menueditor_import[indice5]);
-  
-    });
-
-    casper.then(function() {
-    
-      test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbviecampus.com' + menueditor_import[indice5]);
-    
-    });
-
-    casper.then(function() {
-    
-      indice5++;
-    
-    });
-
-  }
-
-  casper.then(function() {
-  
-    this.echo(' ');
-    this.echo('---***___STATISTICS___***---');
-    this.echo(' ');
-  
-  });
-
-  casper.then(function() {
-  
-    casper.click('a[href="/uk/statistics"]');
-    this.echo('Clicked in Statistics');
-  
-  });
-
-  casper.then(function() {
-    
-    test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbviecampus.com/uk/statistics');
-    
-  });
-
-  var indice2 = 0;
-
-  for (i = 0; i < menueditor_statistics.length; i++) {
-  
-    casper.then(function() {
-  
-      casper.click('a[href="' + menueditor_statistics[indice2] + '"]');
-      this.echo('Clicked in ' + menueditor_statistics[indice2]);
-  
-    });
-
-    casper.then(function() {
-    
-      test.assertHttpStatus(200);
-      test.assertUrlMatch('https://abbviecampus.com' + menueditor_statistics[indice2]);
-    
-    });
-
-    casper.then(function() {
-    
-      indice2++;
-    
-    });
-
   }
 
   casper.then(function() {
@@ -302,6 +207,102 @@ casper.test.begin('Campus Abbvie UK - Test32 - Menu Control of Editor', 0, funct
   casper.then(function() {
   
     this.echo(' ');
+    this.echo('---***___STATISTICS___***---');
+    this.echo(' ');
+  
+  });
+
+  casper.then(function() {
+  
+    casper.click('a[href="/uk/statistics"]');
+    this.echo('Clicked in Statistics');
+  
+  });
+
+  casper.then(function() {
+    
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/statistics');
+    
+  });
+
+  var indice2 = 0;
+
+  for (i = 0; i < menueditor_statistics.length; i++) {
+  
+    casper.then(function() {
+  
+      casper.click('a[href="' + menueditor_statistics[indice2] + '"]');
+      this.echo('Clicked in ' + menueditor_statistics[indice2]);
+  
+    });
+
+    casper.then(function() {
+    
+      test.assertHttpStatus(200);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_statistics[indice2]);
+    
+    });
+
+    casper.then(function() {
+    
+      indice2++;
+    
+    });
+
+  }
+
+  casper.then(function() {
+  
+    this.echo(' ');
+    this.echo('---***___IMPORT___***---');
+    this.echo(' ');
+  
+  });
+
+  casper.then(function() {
+  
+    casper.click('a[href="/uk/admin/import-schedule-course-list"]');
+    this.echo('Clicked in Import');
+  
+  });
+
+  casper.then(function() {
+    
+    test.assertHttpStatus(200);
+    test.assertUrlMatch('https://abbviecampus.com/uk/admin/import-schedule-course-list');
+    
+  });
+
+  var indice5 = 0;
+
+  for (i = 0; i < menueditor_import.length; i++) {
+  
+    casper.then(function() {
+  
+      casper.click('a[href="' + menueditor_import[indice5] + '"]');
+      this.echo('Clicked in ' + menueditor_import[indice5]);
+  
+    });
+
+    casper.then(function() {
+    
+      test.assertHttpStatus(200);
+      test.assertUrlMatch('https://abbviecampus.com' + menueditor_import[indice5]);
+    
+    });
+
+    casper.then(function() {
+    
+      indice5++;
+    
+    });
+
+  }
+
+  casper.then(function() {
+  
+    this.echo(' ');
     this.echo('---***___ITEMS NUMBER___***---');
     this.echo(' ');
   
@@ -315,7 +316,7 @@ casper.test.begin('Campus Abbvie UK - Test32 - Menu Control of Editor', 0, funct
 
   casper.then(function() {
     
-    test.assertElementCount('li', 68);
+    test.assertElementCount('li', 69);
     
   });
   

@@ -1,5 +1,5 @@
-var userName = ****;
-var password = ****;
+var userName = 'casper_test';
+var password = 'B3Lu1hf1';
 
 casper.test.begin('Campus Abbvie UK - Test19 - Menu Control Homepage', 51, function suite(test) {
 
@@ -62,14 +62,14 @@ casper.test.begin('Campus Abbvie UK - Test19 - Menu Control Homepage', 51, funct
   casper.back();
 
   casper.then(function() {
-    casper.click('a[href="/uk/course/lyndacom-free-online-training"]');
+    casper.click('a[href="/uk/course/lyndacom-paid-subscription-for-abbvie-employees"]');
     this.echo('Clicked in LYNDA:COM');
   });
 
   casper.then(function() {
-    test.assertTitle('lynda.com - free online training | AbbVie');
+    test.assertTitle('lynda.com - Paid subscription for AbbVie employees | AbbVie');
     test.assertHttpStatus(200);
-    test.assertUrlMatch('https://abbviecampus.com/uk/course/lyndacom-free-online-training');
+    test.assertUrlMatch('https://abbviecampus.com/uk/course/lyndacom-paid-subscription-for-abbvie-employees');
   });
 
   casper.back();

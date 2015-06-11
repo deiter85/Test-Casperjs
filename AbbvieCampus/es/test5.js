@@ -38,7 +38,7 @@ casper.test.begin('Campus Abbvie ES - Test5 - Itinerarios Formativos y Mi Formac
         this.echo('Clicked in Mostrar itinerario');
     });
 
-	casper.wait(50, function() {});
+	casper.wait(25, function() {});
 
     casper.then(function() {
         test.assertExists(x('//*[@class="percentages"]'), 'Find an element matching: CUADRO PORCENTAJE');

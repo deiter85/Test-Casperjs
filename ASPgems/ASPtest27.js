@@ -1,21 +1,21 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test27 - Servicios-Direccion Tecnica', 7, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test27 - Servicios-Analitica Agil', 7, function suite(test) {    
   	casper.start();
   	casper.thenOpen('/', function() {
    	  	casper.click("a[href='/servicios']"); //hacer click en servicio
     });
     casper.then(function() {
-   	  	casper.click("a[href='/servicios/direccion-tecnica']"); //hacer click en direccion tecnica
+   	  	casper.click("a[href='/servicios/analitica-agil']"); //hacer click en analitica agil
     });
   	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/servicios/direccion-tecnica', 'Direccion URL correcta'); //comprobar la direccion URL
+  	   	test.assertUrlMatch('https://aspgems.com/servicios/analitica-agil', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {
   		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
     });
     casper.then(function() {
-        test.assertSelectorHasText('h1', 'Dirección técnica', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
+        test.assertSelectorHasText('h1', 'Analítica ágil', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
     });
     casper.then(function() {
   		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen

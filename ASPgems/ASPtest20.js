@@ -1,39 +1,36 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test20 - Presupuesto-Web Contenidos', 8, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems - Test20 - Servicios-Desarrollo Web', 7, function suite(test) {    
   	casper.start();
-    casper.thenOpen('/', function() {
-   	  	casper.click("a[href='/presupuesto']"); //hacer click en presupuesto
-  	});
+  	casper.thenOpen('/', function() {
+   	  	casper.click("a[href='/servicios']"); //hacer click en servicio
+    });
     casper.then(function() {
-      	casper.click("a[href='/presupuesto/web-de-contenidos-tipo-revista']"); //hacer click en web de contenidos tipo revista
+   	  	casper.click("a[href='/servicios/desarrollo-web']"); //hacer click en desarrollo web
     });
   	casper.then(function() {		
-  	   	test.assertUrlMatch('https://aspgems.com/presupuesto/web-de-contenidos-tipo-revista', 'Direccion URL correcta'); //comprobar la direccion URL
-    });
-    casper.then(function() {  
-  		test.assertTitle('Web de contenidos tipo revista | ASPgems Soluciones Ágiles', 'Titulo --> ' + this.getTitle()); //comprobar el titulo de la pagina
+  	   	test.assertUrlMatch('https://aspgems.com/servicios/desarrollo-web', 'Direccion URL correcta'); //comprobar la direccion URL
     });
     casper.then(function() {
-        test.assertExists(x('//*[@id="page-title"]'), 'Se encuentra el titulo'); //comprobar el titulo
+  		  test.assertExists('h1', 'Se encuentra el titulo'); //comprobar si se encuentra el titulo
     });
     casper.then(function() {
-        test.assertExists(x('//a[@title="Volver a presupuestos" and @href="/presupuesto"]'), 'Se encuentra el link volver a presupuesto'); //comprobar link volver a presupuesto
+        test.assertSelectorHasText('h1', 'Desarrollo Web', 'El texto del titulo es el correcto'); //comprobar si el titulo es el correcto
     });
     casper.then(function() {
-        test.assertExists(x('//*[@class="field field-name-field-project-type-description field-type-text-with-summary field-label-hidden view-mode-full"]'), 'Se encuentra el texto de la pagina'); //comprobar texto de la pagina
+  		  test.assertExists(x('//img[@class="image-style-servicio-desplegado"]'), 'Se encuentra la imagen'); //comprobar la imagen
     });
     casper.then(function() {
-        test.assertExists(x('//*[@class="field field-name-field-project-type-range field-type-image field-label-above view-mode-full"]'), 'Se encuentra el cuadro rango de precio'); //comprobar cuadro rango de precio
-    });
-    casper.then(function() {            
-        test.assertExists(x('//*[@class="field field-name-field-project-type-time-range field-type-image field-label-above view-mode-full"]'), 'Se encuentra el cuadro rango de tiempo'); //comprobar cuadro rango de tiempo
+        test.assertExists(x('//a[@class="colorbox init-colorbox-processed cboxElement"]'), 'Se encuentra el link de la imagen'); //comprobar link en la imagen
     });
     casper.then(function() {
-        test.assertExists(x('//*[@id="block-webform-client-block-1100"]'), 'Se encuentra el formulario Solicitar presupuesto'); //comprobar formulario Solicitar presupuesto
+    	  test.assertExists(x('//div[@class="field field-name-body field-type-text-with-summary field-label-hidden view-mode-full image-and-form"]'), 'Se encuentra el texto de la pagina'); //comprobar texto de la pagina
     });
-    casper.run(function() {
-        casper.echo("Test finalizado"); //mensaje
-        test.done();
+    casper.then(function() {
+      	test.assertExists(x('//form[@class="webform-client-form image-and-form"]'), 'Se encuentra el formulario ¿En que te podemos ayudar?'); //comprobar formulario ¿En que te podemos ayudar?
     });
+   	casper.run(function() {
+   		  casper.echo("Test finalizado"); //mensaje
+   		  test.done();
+   	});
 });

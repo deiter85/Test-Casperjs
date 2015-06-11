@@ -1,12 +1,12 @@
 var x = require('casper').selectXPath;
 
-casper.test.begin('Comprobar pagina ASPgems - Test4 - Cultura', 4, function suite(test) {    
+casper.test.begin('Comprobar pagina ASPgems UK - Test36 - Culture', 4, function suite(test) {    
   	casper.start();
-    casper.thenOpen('/', function() {
-    	  casper.click("a[href='/cultura']"); //hacer click en cultura
+    casper.thenOpen('/en', function() {
+    	  casper.click("a[href='/en/culture']"); //hacer click en cultura
   	});
   	casper.then(function(){		
- 	    	test.assertUrlMatch('https://aspgems.com/cultura', 'Direccion URL correcta'); //comprobar la direccion URL
+ 	    	test.assertUrlMatch('https://aspgems.com/en/culture', 'Direccion URL correcta'); //comprobar la direccion URL
  	  });
   	casper.then(function(){	
   	  	test.assertExists(x('//*[@class="block-content content"]'), 'Se encuentra el titulo'); //comprobar el titulo
