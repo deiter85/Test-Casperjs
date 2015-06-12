@@ -1,7 +1,7 @@
 var userName = '****';
 var password = '****';
 
-casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal', 48, function suite(test) {
+casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal', 51, function suite(test) {
 
   casper.start();
 
