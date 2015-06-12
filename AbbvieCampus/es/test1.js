@@ -119,7 +119,7 @@ casper.test.begin('Campus Abbvie ES - Test1 - Control Menu de Pagina Principal',
   });
 
   casper.then(function() {
-    test.assertTitle('Formacion anual | AbbVie');
+    test.assertTitle('Formación anual | AbbVie');
     test.assertHttpStatus(200);
     test.assertUrlMatch('https://abbviecampus.com/es/annual-training');
   });
